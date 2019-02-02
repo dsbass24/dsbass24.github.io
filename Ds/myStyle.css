@@ -1,5 +1,5 @@
 /*
-	DSresume
+	Resume
 */
 
 #nav {
@@ -28,7 +28,7 @@ body {
 	background-position : center;
 	background-repeat : no-repeat;
 	background-attachment : fixed;
-	background-image : url(../img/ibCenter.jpg);
+	background-image : url(./ibCenter.jpg);
 }
 
 h4 {
@@ -38,14 +38,14 @@ h4 {
 	padding : 1%;
 	width : 100%;
 	color : orange;
-	font-size : 20px;
+	font-size : 19px;
 	cursor : pointer;
 	display : list-item;
 	position : relative;
 	border : dotted 1px orange;
 	list-style-position : inside;
 	background-color : rgba(0,0,0,0.4);
-	list-style-image : url(../img/fish2.jpg);
+	list-style-image : url(./fish2.jpg);
 }
 
 p {
@@ -56,13 +56,13 @@ p {
 	height : auto;
 	color : orange;
 	padding : 1.4%;
-	display : block;
+	display : list-item;
 	font-size : 15px;
 	position : relative;
 	border : dotted 1px orange;
 	list-style-position : inside;
 	background-color : rgba(0,0,0,0.5);
-	list-style-image : url(../img/radS.jpg);
+	list-style-image : url(./small2.jpg);
 }
 
 section {
@@ -78,5 +78,5 @@ section {
 	background-repeat : no-repeat;
 	background-position : center;
 	background-attachment : fixed;
-	background-image : url(../img/ibCenter.jpg);
+	background-image : url(./ibCenter.jpg);
 }

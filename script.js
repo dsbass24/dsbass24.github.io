@@ -7,13 +7,17 @@ document.addEventListener("DOMContentLoaded", function(e){
 		var sec = document.getElementById("section");
 		if(tag === "iframe"){
 			myTag.src = content;
+			//myTag.src = "https://dsbass24.github.io/resume/index.html";
 			sec.appendChild(myTag);
 		}
 	}
+	
 	create("section", null);
 	create("button", "Go !!!");
 	document.getElementsByTagName("button")[0].onclick = function(){
-		create("iframe", "https://dsbass24.github.io/resume/index.html");
+		
+		create("iframe", "./Ds/index.html");
+		//create("iframe", "https://dsbass24/resume/dsbass24.github.io/resume/");
 		this.onclick = function(){};
 		//console.log(this.id);
 	}
