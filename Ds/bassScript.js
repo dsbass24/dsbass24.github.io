@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function(w){
 	}
 	// h4 : padding
 	function restyle(orig, param){
-		//setTimeout(function(){},0);
 		outSect(orig, param);
 		for(var p = 1; p <= 70; ++p){
 			var pTime = function(p){
@@ -123,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(w){
 					}else{
 						orig.style.padding = 1 + (p / 10) + "%";
 					}
-				},p * 3);
+				},p * 5);
 			}
 			pTime(p);
 		}
@@ -137,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function(w){
 					var nTime = function(s, n){
 						setTimeout(function(){
 							elem[s].style.left = 90 - n / 10 + "%";
-						},(s + n / 300) * 180);
+						},(s + n / 400) * 200);
 					}
 					nTime(s, n);
 				}
@@ -147,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function(w){
 					nTime = function(s, n){
 						setTimeout(function(){
 							elem[s].style.left = n / 10 + "%";
-						},(s + n / 200) * 100);
+						},(s + n / 300) * 100);
 					}
 					nTime(s, n);
 				}
@@ -183,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function(w){
 			var tTime = function(myTop, t){
 				setTimeout(function(){
 					myTop.style.top = hTop - t + "px";
-				},(myTop, t / 10) * 60);
+				},(myTop, t / 10) * 40);
 			}
 			tTime(myTop, t);
 		}
