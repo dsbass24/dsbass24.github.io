@@ -113,19 +113,19 @@ document.addEventListener("DOMContentLoaded", function(w){
 	}
 	// h4 : padding
 	function restyle(orig, param){
-		outSect(orig, param);
-		for(var p = 1; p <= 70; ++p){
+		for(var p = 1; p <= 700; ++p){
 			var pTime = function(p){
 				setTimeout(function(){
 					if (param === "-"){
-						orig.style.padding = 8 - (p / 10) + "%";
+						orig.style.padding = 8 - p / 100 + "%";
 					}else{
-						orig.style.padding = 1 + (p / 10) + "%";
+						orig.style.padding = 1 + p / 100 + "%";
 					}
-				},p * 5);
+				},(p / 10) * 5);
 			}
 			pTime(p);
 		}
+		outSect(orig, param);
 	}
 	// section : left
 	function outSect(myS, param){
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function(w){
 					nTime = function(s, n){
 						setTimeout(function(){
 							elem[s].style.left = n / 10 + "%";
-						},(s + n / 300) * 100);
+						},(s + n / 200) * 100);
 					}
 					nTime(s, n);
 				}
@@ -161,30 +161,21 @@ document.addEventListener("DOMContentLoaded", function(w){
 			var hTime = function(myH, h){
 				setTimeout(function(){
 					myH.style.height = myHeight - h + "px";
-				},(myH, h - 1 / 10) * 10);
+				},(myH, h / myHeight) * 900);
 			}
 			hTime(myH, h);
 		}
 	}
-	// section : height, top
+	// section : height
 	function outSectTop(myTop){
 		var pHeight = myTop.childNodes[0].clientHeight;
 		for(var p = 0; p <= pHeight; p++){
 			var pTime = function(myTop, p){
 				setTimeout(function(){
 					myTop.style.height = p + "px";
-				},(myTop, p / 20) * 200);
+				},(myTop, p / pHeight) * 900);
 			}
 			pTime(myTop, p);
-		}
-		var hTop = document.getElementsByClassName("off").offsetTop;
-		for(var t = hTop; t >= 0; --t){
-			var tTime = function(myTop, t){
-				setTimeout(function(){
-					myTop.style.top = hTop - t + "px";
-				},(myTop, t / 10) * 40);
-			}
-			tTime(myTop, t);
 		}
 	}
 });
