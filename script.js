@@ -7,18 +7,42 @@ document.addEventListener("DOMContentLoaded", function(e){
 		var sec = document.getElementById("section");
 		if(tag === "iframe"){
 			myTag.src = content;
-			//myTag.src = "https://dsbass24.github.io/resume/index.html";
 			sec.appendChild(myTag);
+			styleFrame(myTag);
 		}
 	}
-	
 	create("section", null);
 	create("button", "Go !!!");
 	document.getElementsByTagName("button")[0].onclick = function(){
-		
 		create("iframe", "./Ds/index.html");
-		//create("iframe", "https://dsbass24/resume/dsbass24.github.io/resume/");
+		this.style.border = 0;
+		this.style.cursor = "auto";
 		this.onclick = function(){};
-		//console.log(this.id);
+	}
+	function styleFrame(myFrame){
+		var frameLeft = myFrame.offsetLeft;
+		var m = 100;
+		while(m > 0){
+			var leftTime = function(m){
+				setTimeout(function(){
+					myFrame.style.marginLeft = 100 - m + "%";
+					if(m === 100){
+						mHeight();
+					}
+				},m * 15);
+			}
+			leftTime(m);
+			m--;
+		}
+		function mHeight(){
+			for(m = 0; m <= 60; m++){
+				var heightTime = function(m){
+					setTimeout(function(){
+						myFrame.style.height = m + "%";
+					},m * 30);
+				}
+				heightTime(m);
+			}
+		}
 	}
 });
