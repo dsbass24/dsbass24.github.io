@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myTag.id = tag;
 		document.body.appendChild(myTag);
 		myTag.innerHTML = content;
+		if(tag === "button"){
+			myTag.title = "Нажми на меня...";
+		}
 		var sec = document.getElementById("section");
 		if(tag === "iframe"){
 			myTag.src = content;
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		create("iframe", "./Ds/index.html");
 		this.style.border = 0;
 		this.style.cursor = "auto";
+		this.title = "Дима";
 		this.onclick = function(){};
 	}
 	function styleFrame(myFrame){
