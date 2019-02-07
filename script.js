@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		document.body.appendChild(myTag);
 		myTag.innerHTML = content;
 		if(tag === "button"){
-			myTag.title = "Нажми на меня...";
+			myTag.title = "РќР°Р¶РјРё РЅР° РјРµРЅСЏ...";
 		}
 		var sec = document.getElementById("section");
 		if(tag === "iframe"){
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		create("iframe", "./Ds/index.html");
 		this.style.border = 0;
 		this.style.cursor = "auto";
-		this.title = "Дима";
+		this.title = "Р”РёРјР°";
 		this.onclick = function(){};
 	}
 	function styleFrame(myFrame){
