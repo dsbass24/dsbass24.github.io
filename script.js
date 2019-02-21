@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 					if(m === 100){
 						mHeight();
 					}
-				},m * 15);
+				},m * 11);
 			}
 			leftTime(m);
 			m--;
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				var heightTime = function(m){
 					setTimeout(function(){
 						myFrame.style.height = m + "%";
-					},m * 30);
+					},m * 20);
 				}
 				heightTime(m);
 			}
