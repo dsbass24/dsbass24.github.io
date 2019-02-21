@@ -49,8 +49,7 @@ var myRes = [
 		text: [
 			"Люблю музыку - слушать и создавать. Увлекаюсь игрой на гитаре.",
 			"С 2016 года не смотрю телевизор.",
-			"Интересуюсь Теоретической физикой и слежу за достижениями практических исследований Квантовой механики.",
-			"Отрицательно отношусь к использованию Библиотек, при написании кода, если от этого не зависит результат выполнения поставленной задачи."
+			"Интересуюсь Теоретической физикой и слежу за достижениями практических исследований Квантовой механики."
 		],
 		im: "img/music.jpg"
 	}
@@ -113,15 +112,15 @@ document.addEventListener("DOMContentLoaded", function(w){
 	}
 	// h4 : padding
 	function restyle(orig, param){
-		for(var p = 1; p <= 700; ++p){
+		for(var p = 1; p <= 600; ++p){
 			var pTime = function(p){
 				setTimeout(function(){
 					if (param === "-"){
-						orig.style.padding = 8 - p / 100 + "%";
+						orig.style.padding = 7 - p / 100 + "%";
 					}else{
 						orig.style.padding = 1 + p / 100 + "%";
 					}
-				},(p / 10) * 5);
+				},(p / 10) * 4);
 			}
 			pTime(p);
 		}
@@ -136,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function(w){
 					var nTime = function(s, n){
 						setTimeout(function(){
 							elem[s].style.left = 90 - n / 10 + "%";
-						},(s + n / 400) * 200);
+						},(s + n / 300) * 160);
 					}
 					nTime(s, n);
 				}
