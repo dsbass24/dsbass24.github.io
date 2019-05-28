@@ -299,6 +299,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/***************************************************************************************************/
 	//Отображение даты и времени
 	var myTime = function(){
+		time.innerText = "Вводи ети слова без ошибок";
 		setInterval(function(){
 			time.innerHTML = document.lastModified;
 		}, 1000);
