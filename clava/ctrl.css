@@ -1,0 +1,248 @@
+/*
+	ctrl
+*/
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	background-color : gray;
+	background-image : url(ibCenter.JPG);
+	background-attachment : fixed;
+	background-position : center;
+	background-size : cover;
+	font-family : Courier;
+	overflow : hidden;
+}
+/****************************************************************/
+#over {
+	position : absolute;
+	top : 20px;
+	left : 13%;
+	font-size : 27px;
+	font-weight : bold;
+	color : orange
+}
+#gif {
+	background-image : url(XklJ.gif);
+	background-position : center;
+	background-size : cover;
+	position : absolute;
+	width : 320px;
+	height : 200px;
+	top : 100px;
+	left : 200px;
+}
+/****************************************************************/
+#for-time {
+	position : fixed;
+	background-color : rgba(140, 140, 140, 0);
+	width : 100%;
+	z-index : 9;
+}
+#time {
+	color : #03a9f4;
+	font-size : 15px;
+	float : right
+}
+#point {
+	position : relative;
+	font-size : 16px;
+	color : #d2d2d2;
+	width : auto;
+}
+/****************************************************************/
+#len {
+	border-radius : 3px;
+	background-image : url(ibS.JPG);
+	background-attachment : fixed;
+	background-size : contain;
+	display : flex;
+	position : fixed;
+	top : 40px;
+	left : 2px;
+	min-width : 0;
+	max-width : 98%;
+	padding-right : 14px;
+	height : 26px;
+	background-color : rgba(0,0,0,0.4);
+	border : 1px inset #b5b5b5;
+	overflow : hidden;
+	z-index : 699
+}
+section {
+	white-space : pre;
+	overflow : hidden;
+	border-radius : 3px;
+	display : block;
+	position : relative;
+	margin : 0px -15px 0px 0px;
+	padding : 1px;
+	background-size : cover;
+	background-color : rgba(189, 189, 189, 0.7);
+	border : 1px solid black;
+	font-size : 0px;
+	color : black;
+	width : 14px;
+	height : 22px;
+	cursor : none;
+}
+.off {
+	background-color : rgba(0, 186, 255, 0.3);
+}
+.on {
+	background-color : rgba(0, 186, 255, 0.3);
+}
+.section {
+	background-color : rgba(0, 255, 17, 0.2);
+}
+.off:hover {
+	/*
+	background-size : cover;*/
+	background-image : url(Pika.jpg);
+	background-color : rgba(0, 186, 255, 0.8);
+}
+/****************************************************************/
+#lookLen {
+	border-radius : 3px;
+	background-image : url(ibS.JPG);
+	background-size : contain;
+	background-attachment : fixed;
+	display : flex;
+	position : fixed;
+	top : 70px;
+	left : 2px;
+	min-width : 0;
+	max-width : 98%;
+	padding-right : 14px;
+	height : 26px;
+	background-color : rgba(0,0,0,0);
+	border : 1px inset #b5b5b5;
+	overflow : hidden;
+	z-index : 699
+}
+.out {
+	background-image : url(Chirva.jpg);
+	top : -26px;
+}
+.out:hover {
+	background-image : none;
+	background-color : rgba(0, 186, 255, 0.8);
+}
+/****************************************************************/
+#left {
+	position : fixed;
+	background-color : rgba(0,0,0,0.2);
+	z-index : 998;
+	top : 120px;
+	left : 200px;
+}
+input {
+	color : blue
+}
+input#inp {
+	font-family : Courier;
+	font-size : 50px;
+	/*background-image : url(membrana.jpg);*/
+	background-size : cover;
+	width : 700px;
+}
+input#inp.wordsInp {
+	cursor : pointer;
+	border : 1px outset #ff9b0d;
+	border-radius : 6px;
+	background-color : rgba(0,0,0,0);
+	color : #ff9b0d
+}
+input#inp.swInp {
+	cursor : pointer;
+	border : 1px outset #57ff0d;
+	border-radius : 6px;
+	background-color : rgba(0,0,0,0);
+	color : #57ff0d
+}
+input#inp.wordsInp:focus {
+	background : rgba(0,0,0,1);
+	outline : none;
+	border : 1px inset #ff9b0d;
+	cursor : none
+}
+input#inp.swInp:focus {
+	background : rgba(0,0,0,1);
+	outline : none;
+	border : 1px inset #57ff0d;
+	cursor : none
+}
+/****************************************************************/
+#right {
+	overflow : hidden;
+	position : fixed;
+	background-color : rgba(0,0,0,0.5);
+	width : 468px;
+	height : 240px;
+	padding : 6px;
+	font-size : 34px;
+	z-index : 990;
+	top : 200px;
+	left : 200px;
+	color : #797979;
+	border : 1px inset #ff9b0d;
+	border-radius : 6px;
+}
+#right.swRight {
+	border : 1px inset #57ff0d;
+}
+/****************************************************************/
+#one {
+	display : grid;
+	position : fixed;
+	width : 100px;
+	height : auto;
+	top : 120px;
+	left : 70px;
+	z-index : 644
+}
+.sw {
+	white-space : pre;
+	background-color : rgba(0, 0, 0, 0.45);
+	border : 1px outset gray;
+	border-radius : 4px;
+	font-size : 13px;
+	color : #dcdcdc;
+	width : 100%;
+	height : auto;
+	cursor : pointer;
+}
+.sw:hover {
+	border : 1px outset #ff9b0d;
+	color : orange
+}
+.swOff {
+	background-color : rgba(0, 0, 0, 0.8);
+	border : 1px inset #57ff0d;
+	border-radius : 4px;
+	font-size : 13px;
+	color : #57ff0d;
+	width : 100%;
+	height : auto;
+	cursor : pointer;
+}
+#kart {
+	background-image : url(virusOrange.jpg);
+	background-position : center;
+	background-size : cover;
+	display : block;
+	position : fixed;
+	width : 40px;
+	height : 40px;
+	top : 120px;
+	left : 10px;
+	border : 1px outset gray;
+	border-radius : 4px;
+	cursor : pointer;
+	z-index : 645
+}
+#kart:hover {
+	background-image : url(Sliz.gif);
+}
+/**/
