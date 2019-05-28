@@ -293,13 +293,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 				askPoint(mySome.textContent);
 			}else{
 				askPoint("");
+				myTime();
 			}
 		}
 	});
 	/***************************************************************************************************/
-	setTimeout(function(){
-		time.innerText = "Вводи ети слова без ошибок";
-	}, 6000);
+	function myTime(){
+		setTimeout(function(){
+			time.innerText = "Вводи ети слова без ошибок";
+		}, 6000);
+	}
 });
 /*
 	//Отображение даты и времени
