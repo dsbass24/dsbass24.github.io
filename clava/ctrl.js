@@ -1,5 +1,9 @@
 /*
 	ctrl
+	
+	Author 
+	e-mail: dsbass@rambler.ru
+	Сделал для себя, ПОТОМУ ЧТО МЕДЛЕННО НАБИРАЛ ТЕКСТ С КЛАВИАТУРЫ !!!
 */
 document.addEventListener("DOMContentLoaded", function(e){
 	var myBody = document.body;
@@ -11,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myBody.appendChild(myTag);
 		if(tag === "pre"){
 			forTime.appendChild(myTag);
-			//document.getElementById("forTime").appendChild(point);
 		}
 		if(id === "point"){
 			forTime.appendChild(myTag);
@@ -275,17 +278,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Отображение даты и времени
-	var myTime = function(){
-		
-		setInterval(function(){
-			var lm = document.lastModified;
-			time.innerHTML = lm;
-		}, 1000);
-		
-	}
-	myTime();
-	/***************************************************************************************************/
 	document.body.addEventListener("mouseover", function(my){
 		var mySome = my.toElement;
 		if(mySome.id === "kart"){
@@ -304,6 +296,14 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 		}
 	});
+	/***************************************************************************************************/
+	//Отображение даты и времени
+	var myTime = function(){
+		setInterval(function(){
+			time.innerHTML = document.lastModified;
+		}, 1000);
+	}
+	myTime();
 });
 /*
 
