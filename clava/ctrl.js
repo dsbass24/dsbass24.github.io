@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myTag.className = cl;
 		myBody.appendChild(myTag);
 		if(tag === "pre"){
-			document.getElementById("for-time").appendChild(myTag);
-			document.getElementById("for-time").appendChild(point);
+			forTime.appendChild(myTag);
+			//document.getElementById("forTime").appendChild(point);
+		}
+		if(id === "point"){
+			forTime.appendChild(myTag);
 		}
 		if(id === "kart"){
 			myTag.addEventListener("click", clickKart);
@@ -51,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 	//Общий набор тегов для загрузки и обновления представления
 	function rBody(){
 		myBody.innerHTML = "";
-		create("div", "for-time", "");
-		create("div", "point", "");
+		create("div", "forTime", "");
 		create("pre", "time", "date");
+		create("div", "point", "");
 		create("div", "kart", "Rs4b");
 	}
 	rBody();
@@ -274,9 +277,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/***************************************************************************************************/
 	//Отображение даты и времени
 	var myTime = function(){
+		
 		setInterval(function(){
-			time.innerHTML = document.lastModified;
+			var lm = document.lastModified;
+			time.innerHTML = lm;
 		}, 1000);
+		
 	}
 	myTime();
 	/***************************************************************************************************/
@@ -299,25 +305,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 });
-
 /*
-	{
-		eng : "",
-		rus : ""
-	},
+
 */
-var iNumb = {
-	0: "0.png",
-	1: "1.png",
-	2: "2.png",
-	3: "3.png",
-	4: "4.png",
-	5: "5.png",
-	6: "6.png",
-	7: "7.png",
-	8: "8.png",
-	9: "9.png"
-}
 var words = [
 	{
 		eng : "say",
@@ -1626,7 +1616,7 @@ var words = [
 ];
 var sw = [
 	{
-		lett: "A",		//38
+		lett: "A",
 		word: [
 			"above",
 			"abs",
@@ -1669,7 +1659,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "B",		//28
+		lett: "B",
 		word: [
 			"back",
 			"background",
@@ -1702,7 +1692,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "C",		//52
+		lett: "C",
 		word: [
 			"call",
 			"captureEvents",
@@ -1759,7 +1749,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "D",		//29
+		lett: "D",
 		word: [
 			"data",
 			"Date",
@@ -1793,7 +1783,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "E",		//19
+		lett: "E",
 		word: [
 			"elementFromPoint",
 			"elements",
@@ -1817,7 +1807,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "F",		//36
+		lett: "F",
 		word: [
 			"false",
 			"fetch",
@@ -1858,7 +1848,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "G",		//36
+		lett: "G",
 		word: [
 			"getAttention",
 			"getAttribute",
@@ -1899,7 +1889,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "H",		//15
+		lett: "H",
 		word: [
 			"handleEvent",
 			"hasAttribute",
@@ -1919,7 +1909,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "I",		//23
+		lett: "I",
 		word: [
 			"ids",
 			"if",
@@ -1947,7 +1937,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "J",		//7
+		lett: "J",
 		word: [
 			"java",
 			"JavaArray",
@@ -1959,7 +1949,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "L",		//33
+		lett: "L",
 		word: [
 			"language",
 			"lastChild",
@@ -1997,7 +1987,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "M",		//25
+		lett: "M",
 		word: [
 			"marginBottom",
 			"marginLeft",
@@ -2027,7 +2017,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "N",		//18
+		lett: "N",
 		word: [
 			"name",
 			"nameProp",
@@ -2050,7 +2040,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "O",		//78
+		lett: "O",
 		word: [
 			"Object",
 			"of",
@@ -2133,7 +2123,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "P",		//47
+		lett: "P",
 		word: [
 			"package",
 			"Packages",
@@ -2185,7 +2175,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "Q",		//6
+		lett: "Q",
 		word: [
 			"queryCommandEnabled",
 			"queryCommandIndeterm",
@@ -2196,7 +2186,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "R",		//28
+		lett: "R",
 		word: [
 			"Radio",
 			"random",
@@ -2229,7 +2219,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "S",		//97
+		lett: "S",
 		word: [
 			"savePreferences",
 			"screen",
@@ -2331,7 +2321,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "T",		//32
+		lett: "T",
 		word: [
 			"tags",
 			"taint",
@@ -2368,7 +2358,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "U",		//14
+		lett: "U",
 		word: [
 			"undefined",
 			"unescape",
@@ -2387,7 +2377,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "V",		//10
+		lett: "V",
 		word: [
 			"value",
 			"valueOf",
@@ -2402,7 +2392,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "W",		//8
+		lett: "W",
 		word: [
 			"watch",
 			"while",
@@ -2415,7 +2405,7 @@ var sw = [
 		]
 	},
 	{
-		lett: "X, Y, Z", 	//6
+		lett: "X, Y, Z",
 		word: [
 			"x",
 			"XMLDocument",
