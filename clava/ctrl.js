@@ -297,6 +297,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 	/***************************************************************************************************/
+	setTimeout(function(){
+		time.innerText = "Вводи ети слова без ошибок";
+	}, 6000);
+});
+/*
 	//Отображение даты и времени
 	var myTime = function(){
 		time.innerText = "Вводи ети слова без ошибок";
@@ -305,9 +310,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}, 1000);
 	}
 	myTime();
-});
-/*
-
 */
 var words = [
 	{
