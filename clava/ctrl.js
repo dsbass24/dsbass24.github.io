@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				askPoint(mySome.textContent);
 			}else{
 				//askPoint("");
-				askPoint(window.document.lastModified);
+				askPoint(console.log(document.lastModified));
 				myTime();
 			}
 		}
