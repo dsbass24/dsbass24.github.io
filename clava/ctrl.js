@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/***************************************************************************************************/
 	function myTime(){
 		setTimeout(function(){
-			time.innerText = "Вводи ети слова без ошибок";
+			time.innerText = "Вводи слово точно так, как показано...";
 		}, 6000);
 	}
 });
