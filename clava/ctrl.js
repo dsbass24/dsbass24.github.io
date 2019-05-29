@@ -292,7 +292,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}else if(mySome.className === "out"){
 				askPoint(mySome.textContent);
 			}else{
-				askPoint("");
+				//askPoint("");
+				askPoint(window.document.lastModified);
 				myTime();
 			}
 		}
