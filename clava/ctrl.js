@@ -223,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 			if(right.className === "wordsRight"){
 				textOut(document.getElementById("len" + tagOn.id).textContent);
 			}else{
-				//iNumb
 				var wDone = document.getElementsByClassName("section").length;
 				textOut(wDone + " введено...");
 			}
@@ -267,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Подсказка
+	//Подсказки
 	function inf(){
 		var place = inp.placeholder;
 		var ofOff = document.getElementsByClassName("off").length;
@@ -277,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 			askPoint("Осталось ввести ‹" + place + "›, и всё.");
 		}
 	}
-	/***************************************************************************************************/
 	document.body.addEventListener("mouseover", function(my){
 		var mySome = my.toElement;
 		if(mySome.id === "kart"){
@@ -297,7 +295,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 		}
 	});
-	/***************************************************************************************************/
 	function myTime(){
 		setTimeout(function(){
 			time.innerText = "Вводи слово точно так, как показано...";
