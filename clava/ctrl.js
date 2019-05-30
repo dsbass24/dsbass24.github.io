@@ -1,9 +1,9 @@
 /*
 	ctrl
 	
-	Author 
+	Author: dsbass24
 	e-mail: dsbass@rambler.ru
-	Сделал для себя, ПОТОМУ ЧТО МЕДЛЕННО НАБИРАЛ ТЕКСТ С КЛАВИАТУРЫ !!!
+	Сделал для себя, ПОТОМУ ЧТО МЕДЛЕННО НАБИРАЛ ТЕКСТ НА КЛАВИАТУРЕ !!!
 */
 document.addEventListener("DOMContentLoaded", function(e){
 	var myBody = document.body;
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			myTag.autofocus = "true";
 		}
 		if(tag === "center"){
-			//The end...
+			// The end...
 			myTag.innerText = con;
 		}
 		if(id === "right"){
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Общий набор тегов для загрузки и обновления представления
+	// Общий набор тегов для загрузки и обновления представления
 	function rBody(){
 		myBody.innerHTML = "";
 		create("div", "forTime", "");
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	rBody();
 	/***************************************************************************************************/
-	//Для работы только с "words" массивом
+	// Для работы только с "words" массивом
 	function takeWord(){
 		create("div", "len", "");
 		create("div", "lookLen", "");
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		create("div", "right", "wordsRight");
 	}
 	/***************************************************************************************************/
-	//Для работы только с "sw" массивом
+	// Для работы только с "sw" массивом
 	function take(){
 		create("div", "len", "");
 		create("div", "lookLen", "");
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Для выбора массива (набора слов), с которым хотим работать
+	// Для выбора массива (набора слов), с которым хотим работать
 	function clickKart(){
 		if(kart.className === "Sliz"){
 			rBody();
@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Работает только с массивом "words"
-	//Убирает выбранное количество слов
+	// Работает только с массивом "words"
+	// Убирает выбранное количество слов
 	function setStart(){
 		len.addEventListener("click", function(see){
 			var look = see.toElement;
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Для вывода текста интерактивно вне основного цикла программы. (короче - не мешает...)
+	// Для вывода текста интерактивно вне основного цикла программы. (короче - не мешает...)
 	function askRight(what){
 		right.innerText = what;
 	}
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		point.innerText = what;
 	}
 	/***************************************************************************************************/
-	//Для работы с инпутом и его плейс-холдером
+	// Для работы с инпутом и его плейс-холдером
 	function inpOut(say){
 		inp.placeholder = say;
 		inf();
@@ -202,10 +202,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Полный цикл работы = 3-м фазам проверочных вызовов:
-	//1-й вызов ищет елемент с классом "on". Не обнаружив, берем "off" и меняем имя класса на "on"
-	//2-й вызов полюбому находит "on" и меняет это имя класса на "section"
-	//3-й вызов тупо не обнаружив нужные классы, заменяет всю хрень приятным сообщением "Ура!" :)
+	// Полный цикл работы = 3-м фазам проверочных вызовов:
+	// 1-й вызов ищет елемент с классом "on". Не обнаружив, берем "off" и меняем имя класса на "on"
+	// 2-й вызов полюбому находит "on" и меняет это имя класса на "section"
+	// 3-й вызов тупо не обнаружив нужные классы, заменяет всю хрень приятным сообщением "Ура!" :)
 	function out(){
 		var tagOn = document.getElementsByClassName("on")[0];
 		if(tagOn === undefined){
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Для вывода основного текста с небольшой задержкой
+	// Для вывода основного текста с небольшой задержкой
 	function textOut(c){
 		function tagTime(a, b){
 			setTimeout(function(){
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Визуальный счетчик введенных слов
+	// Визуальный счетчик введенных слов
 	function sWork(w){
 		var se = document.getElementById(w);
 		var seHei = se.offsetHeight;
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/***************************************************************************************************/
-	//Подсказки
+	// Подсказки
 	function inf(){
 		var place = inp.placeholder;
 		var ofOff = document.getElementsByClassName("off").length;
@@ -302,14 +302,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 });
 /*
-	//Отображение даты и времени
-	var myTime = function(){
-		time.innerText = "Вводи ети слова без ошибок";
-		setInterval(function(){
-			time.innerHTML = document.lastModified;
-		}, 1000);
-	}
-	myTime();
+
 */
 var words = [
 	{
