@@ -188,6 +188,7 @@ input#inp.swInp:focus {
 	color : #797979;
 	border : 1px inset #ff9b0d;
 	border-radius : 6px;
+	cursor : default
 }
 #right.swRight {
 	border : 1px inset #57ff0d;
@@ -226,6 +227,7 @@ input#inp.swInp:focus {
 	width : 100%;
 	height : auto;
 	cursor : pointer;
+	text-align : center
 }
 #kart {
 	background-image : url(virusOrange.jpg);
