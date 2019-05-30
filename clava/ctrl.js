@@ -613,7 +613,7 @@ var words = [
 		rus : "(эдрэс) - адрес"
 	},
 	{
-		eng : "phone seyer",
+		eng : "phone number",
 		rus : "(фоун намбэр) - номер телефона"
 	},
 	{
