@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				if(a === c){
 					out();
 				}
-			}, b * 60);
+			}, b * 65);
 		}
 		var symb = "";
 		for(var s = 0; s < c.length; s++){
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		var place = inp.placeholder;
 		var ofOff = document.getElementsByClassName("off").length;
 		if(ofOff !== 0){
-			askPoint("Осталось ввести " + ofOff);
+			askPoint("Осталось ввести " + (ofOff + 1));
 		}else{
 			askPoint("Осталось ввести ‹" + place + "›, и всё.");
 		}
