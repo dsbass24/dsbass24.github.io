@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			var lettTime = function(i){
 				setTimeout(function(){
 					create("section", i, "sw", sw[i].lett + " : " + sw[i].word.length);
-				}, i * 20);
+				}, i * 10);
 			}
 			lettTime(i);
 		}
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				if(a === c){
 					out();
 				}
-			}, b * 65);
+			}, b * 66);
 		}
 		var symb = "";
 		for(var s = 0; s < c.length; s++){
