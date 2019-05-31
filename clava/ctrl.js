@@ -221,7 +221,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}else{
 			tagOn.className = "section";
 			if(right.className === "wordsRight"){
-				textOut(document.getElementById("len" + tagOn.id).textContent);
+				//textOut(document.getElementById("len" + tagOn.id).textContent);
+				textOut(words[tagOn.id].eng + " : " + words[tagOn.id].rus);
 			}else{
 				var wDone = document.getElementsByClassName("section").length;
 				textOut(wDone + " введено...");
@@ -239,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				if(a === c){
 					out();
 				}
-			}, b * 50);
+			}, b * 60);
 		}
 		var symb = "";
 		for(var s = 0; s < c.length; s++){
@@ -1486,7 +1487,7 @@ var words = [
 		rus : "(мэйн) - основной, главный"
 	},
 	{
-		eng : "seyer",
+		eng : "number",
 		rus : "(намбэр) - номер, число"
 	},
 	{
