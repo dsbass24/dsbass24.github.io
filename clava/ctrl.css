@@ -188,7 +188,8 @@ input#inp.swInp:focus {
 	color : #797979;
 	border : 1px inset #ff9b0d;
 	border-radius : 6px;
-	cursor : default
+	cursor : default;
+	word-break : break-all;
 }
 #right.swRight {
 	border : 1px inset #57ff0d;
