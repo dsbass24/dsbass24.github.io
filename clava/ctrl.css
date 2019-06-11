@@ -178,7 +178,7 @@ input#inp.swInp:focus {
 	overflow : hidden;
 	position : fixed;
 	background-color : rgba(0,0,0,0.5);
-	width : 468px;
+	width : 688px;
 	height : 240px;
 	padding : 6px;
 	font-size : 34px;
@@ -246,6 +246,6 @@ input#inp.swInp:focus {
 	z-index : 645
 }
 #kart:hover {
-	background-image : url(Sliz.gif);
+	background-image : url(3h.gif);
 }
 /**/
