@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	// Для работы с инпутом и его плейс-холдером
 	function inpOut(say){
 		inp.placeholder = say;
+		inp.size = inp.placeholder.length;
 		inf();
 		inp.oninput = function(){
 			askRight(say[inp.value.length]);

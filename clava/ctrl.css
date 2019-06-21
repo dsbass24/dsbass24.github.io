@@ -137,27 +137,21 @@ section {
 	top : 120px;
 	left : 200px;
 }
-input {
-	color : blue
-}
 input#inp {
 	font-family : Courier;
 	font-size : 50px;
-	background-size : cover;
-	width : 700px;
+	border-radius : 6px;
+	padding-left : 2px;
+	padding-right : 4px;
+	background-color : rgba(0,0,0,0);
+	cursor : pointer;
 }
 input#inp.wordsInp {
-	cursor : pointer;
 	border : 1px outset #ff9b0d;
-	border-radius : 6px;
-	background-color : rgba(0,0,0,0);
 	color : #ff9b0d
 }
 input#inp.swInp {
-	cursor : pointer;
 	border : 1px outset #57ff0d;
-	border-radius : 6px;
-	background-color : rgba(0,0,0,0);
 	color : #57ff0d
 }
 input#inp.wordsInp:focus {

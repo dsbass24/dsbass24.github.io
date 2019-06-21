@@ -21,7 +21,7 @@ body {
 	left : 13%;
 	font-size : 27px;
 	font-weight : bold;
-	color : orange
+	color : #ff0dbe
 }
 #gif {
 	background-image : url(XYMS.gif);
@@ -48,7 +48,7 @@ body {
 #point {
 	position : relative;
 	font-size : 16px;
-	color : #d2d2d2;
+	color : #ff0dbe;
 	width : auto;
 }
 /****************************************************************/
@@ -142,17 +142,18 @@ input#inp {
 	font-size : 50px;
 	/*background-image : url(membrana.jpg);*/
 	background-size : cover;
-	width : 800px;
 	cursor : pointer;
-	border : 1px outset #57ff0d;
+	border : 1px outset #ff0dbe;
 	border-radius : 6px;
+	padding-left : 2px;
+	padding-right : 4px;
 	background-color : rgba(0,0,0,0);
-	color : #57ff0d
+	color : #ff0dbe
 }
 input#inp:focus {
 	background : rgba(0,0,0,1);
 	outline : none;
-	border : 1px inset #57ff0d;
+	border : 1px inset #ff0dbe;
 	cursor : none
 }
 /****************************************************************/
@@ -168,7 +169,7 @@ input#inp:focus {
 	top : 200px;
 	left : 200px;
 	color : #797979;
-	border : 1px inset #57ff0d;
+	border : 1px inset #ff0dbe;
 	border-radius : 6px;
 	word-break : break-all;
 	cursor : default
