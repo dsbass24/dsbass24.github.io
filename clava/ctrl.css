@@ -24,12 +24,12 @@ body {
 	color : orange
 }
 #gif {
-	background-image : url(XklJ.gif);
+	background-image : url(mary/XYMS.gif);
 	background-position : center;
 	background-size : cover;
 	position : absolute;
-	width : 320px;
-	height : 200px;
+	width : 600px;
+	height : 340px;
 	top : 100px;
 	left : 200px;
 }
@@ -224,7 +224,7 @@ input#inp.swInp:focus {
 	text-align : center
 }
 #kart {
-	background-image : url(virusOrange.jpg);
+	background-image : url(3h.gif);
 	background-position : center;
 	background-size : cover;
 	display : block;
@@ -239,6 +239,6 @@ input#inp.swInp:focus {
 	z-index : 645
 }
 #kart:hover {
-	background-image : url(3h.gif);
+	background-image : url(Sliz.gif);
 }
 /**/

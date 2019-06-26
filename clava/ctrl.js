@@ -4867,12 +4867,7 @@ var sw = [
 			"XSLTProcessor",
 			"y",
 			"zIndex",
-			"zoom",
-			"__defineGetter__",
-			"__defineSetter__",
-			"__lookupGetter__",
-			"__lookupSetter__",
-			"__proto__"
+			"zoom"
 		]
 	}
 ];
