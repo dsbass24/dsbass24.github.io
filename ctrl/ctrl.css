@@ -1,0 +1,369 @@
+/*
+	ctrl
+*/
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	background-color : gray;
+	background-image : url(ibCenter.JPG);
+	background-attachment : fixed;
+	background-position : center;
+	background-size : auto;
+	font-family : Courier;
+	overflow : hidden;
+}
+.hidd {
+	visibility : hidden;
+}
+/****************************************************************/
+#over {
+	position : absolute;
+	top : 30px;
+	left : 13%;
+	font-size : 16px;
+	font-weight : bold;
+	color : #03a9f4;
+}
+#gif {
+	background-image : url(XYMS.gif);
+	background-position : center;
+	background-size : cover;
+	position : absolute;
+	width : 600px;
+	height : 340px;
+	top : 100px;
+	left : 150px;
+}
+/****************************************************************/
+#forTime {
+	position : absolute;
+	background-color : rgba(140, 140, 140, 0);
+	width : 100%;
+	height : 20px;
+}
+#time {
+	color : #37b5ff;
+	font-size : 15px;
+	float : left
+}
+#point {
+	font-size : 16px;
+	color : #c3c3c3;
+	float : right;
+}
+/****************************************************************/
+#len {
+	border-radius : 4px;
+	background-image : url(ibS.JPG);
+	background-attachment : fixed;
+	background-repeat : repeat-x;
+	background-size : auto;
+	display : flex;
+	position : fixed;
+	top : 29px;
+	left : 4px;
+	min-width : 0;
+	max-width : 98%;
+	padding-right : 19px;
+	height : 34px;
+	background-color : rgba(0,0,0,0.4);
+	border : 1px inset #b9b9b9;
+	overflow : hidden;
+	z-index : 699
+}
+section {
+	white-space : pre;
+	overflow : hidden;
+	border-radius : 3px;
+	display : block;
+	position : relative;
+	margin : 0px -20px 0px 0px;
+	padding : 1px;
+	background-size : cover;
+	background-color : rgba(189, 189, 189, 0.3);
+	border : 1px solid black;
+	font-size : 0px;
+	color : black;
+	width : 19px;
+	height : 30px;
+	cursor : none;
+	top : 0;
+}
+.off {
+	background-color : rgba(0, 146, 255, 0.3);
+	transition : transform 2s, ease-in 2s;
+}
+.on {
+	background-color : rgba(0, 180, 255, 0.8);
+	transform : rotate(720deg);
+	transition : transform 1s, ease 1s;
+}
+.section {
+	background-color : rgba(0, 250, 0, 0.2);
+	transition : ease 0s, top 0.4s;
+}
+.off:hover {
+	background-color : rgba(0, 230, 0, 0.6);
+	transition : all 0s, ease 0s;
+}
+/****************************************************************/
+#lookLen {
+	border-radius : 4px;
+	background-image : url(ibS.JPG);
+	background-size : auto;
+	background-attachment : fixed;
+	background-repeat : repeat-x;
+	display : flex;
+	position : fixed;
+	top : 66px;
+	left : 4px;
+	min-width : 0;
+	max-width : 98%;
+	padding-right : 19px;
+	height : 34px;
+	background-color : rgba(0,0,0,0.4);
+	border : 1px inset #b9b9b9;
+	overflow : hidden;
+	z-index : 699
+}
+.out {
+	background-image : url(Chirva.jpg);
+	top : -100%;
+	transition : ease 0s, top 0.4s;
+}
+.out:hover {
+	/*background-image : url(Krest.jpg);
+	background-image : none;
+	background-color : rgba(0, 146, 255, 0.8);
+	transition : transform 1s, ease-in 0.5s;*/
+}
+/****************************************************************/
+#left {
+	position : fixed;
+	background-color : rgba(0,0,0,0);
+	z-index : 998;
+	top : 120px;
+	left : 200px;
+	color : orange;
+}
+input#inp {
+	font-family : Courier;
+	font-size : 53px;
+	letter-spacing : -2px;
+	padding-left : 1px;
+	padding-right : 6px;
+	border-radius : 9px;
+	background-color : rgba(0,0,0,0.4);
+	cursor : pointer;
+	z-index : 99;
+}
+input#inp.wordsInp {
+	border : 1px outset #696969;
+	color : #ff9b0d;
+}
+input#inp.swInp {
+	border : 1px outset #696969;
+	color : #03a9f4
+}
+input#inp.wordsInp:focus {
+	background : rgba(0,0,0,0.8);
+	outline : none;
+	border : 1px inset #696969;
+	cursor : none
+}
+input#inp.swInp:focus {
+	background : rgba(0,0,0,0.7);
+	outline : none;
+	border : 1px inset #696969;
+	cursor : none
+}
+/****************************************************************/
+#right {
+	overflow : hidden;
+	position : fixed;
+	background-color : rgba(0,0,0,0.5);
+	width : 700px;
+	height : 170px;
+	padding : 2px;
+	font-size : 30px;
+	font-style : italic;
+	z-index : 90;
+	top : 200px;
+	left : 200px;
+	color : #797979;
+	border : 1px inset #444444;
+	border-radius : 6px;
+	cursor : default;
+	transition : height 1s;
+}
+#right.wordsRight {
+	transform : perspective(2000px) rotateY(-180deg) rotateX(-360deg) rotateZ(0deg);
+	transition : cubic-bezier(0.6, 0, 0.7, 0.95) 1s;
+}
+#right.swRight {
+	transform : perspective(2000px) rotateY(-180deg) rotateX(-360deg) rotateZ(0deg);
+	transition : cubic-bezier(0.55, 0, 0.5, 0.95) 1s;
+}
+/****************************************************************/
+#one {
+	display : grid;
+	position : fixed;
+	width : 100px;
+	top : 75px;
+	left : -100%;
+	z-index : 4;
+	transition : left 1s, ease 1s;
+}
+#one.onedone {
+	left : 80px;
+	transition : left 0.5s;
+}
+.sw {
+	font-weight : bold;
+	background-color : rgba(0, 0, 0, 0.7);
+	border : 1px inset #555555;
+	border-radius : 4px;
+	font-size : 13px;
+	color : #767676;
+	width : 100%;
+	height : auto;
+	cursor : pointer;
+}
+.sw:hover {
+	color : #000000;
+	background-color : rgba(0, 156, 255, 0.6);
+}
+.swOff {
+	font-weight : bold;
+	background-color : rgba(0, 255, 0, 0.5);
+	border : 1px inset #555555;
+	border-radius : 4px;
+	font-size : 13px;
+	width : 100%;
+	height : auto;
+	cursor : pointer;
+}
+.swMax {
+	font-weight : bold;
+	background-color : rgba(200, 0, 0, 0.4);
+	border : 1px inset #555555;
+	width : 100%;
+	height : auto;
+	border-radius : 4px;
+	font-size : 13px;
+	cursor : alias;
+}
+/****************************************************************/
+button {
+	outline-style : none;
+	font-weight : bold;
+	font-family : Courier;
+}
+#kart {
+	background-image : url(o3h.gif);
+	background-position : center;
+	background-size : cover;
+	display : block;
+	position : fixed;
+	width : 60px;
+	height : 45px;
+	top : 150px;
+	left : 4px;
+	border : 1px outset #646464;
+	border-radius : 4px;
+	cursor : pointer;
+	z-index : 6;
+}
+/*#kart:hover {
+	background-image : url(Sliz.gif);
+	z-index : 9;
+	height : 60px;
+	left : 190px;
+	transition : height 0.6s, ease-in 0.6s;
+}
+#kart.Sliz {
+	left : -70px;
+	transition : left 2s;
+}
+#kart.Rs4b:hover {
+	left : -7px;
+	transition : left 1s;
+}
+#kart.Rs4b {
+	left : -70px;
+	transition : left 1s;
+}
+*/
+#kart:focus {
+	border : 1px inset #646464;
+}
+/****************************************************************/
+#swBox {
+	padding : 2px;
+	font-weight : bold;
+	background-color : rgba(0, 0, 0, 0.6);
+	border : 1px outset #646464;
+	border-radius : 4px;
+	font-size : 13px;
+	color : gray;
+	position : fixed;
+	width : 100px;
+	height : auto;
+	top : 120px;
+	left : 4px;
+	cursor : pointer;
+}
+#swBox:hover {
+	color : #03a9f4
+}
+#swBox:focus {
+	border : 1px inset #646464;
+}
+#resort {
+	width : 100px;
+	background-position : center;
+	background-size : cover;
+	display : block;
+	position : fixed;
+	top : 205px;
+	left : 4px;
+	background-color : rgba(0, 0, 0, 0.6);
+	border : 1px outset #646464;
+	border-radius : 4px;
+	font-size : 13px;
+	color : gray;
+	padding : 2px;
+	cursor : pointer;
+	z-index : 645
+}
+#resort:hover {
+	color : #03a9f4
+}
+#resort:focus {
+	border : 1px inset #646464;
+}
+/****************************************************************/
+#boxButt {
+	font-weight : bold;
+	position : fixed;
+	width : 100px;
+	height : auto;
+	top : 120px;
+	left : 4px;
+	background-color : rgba(0, 0, 0, 0.6);
+	border : 1px outset #646464;
+	border-radius : 4px;
+	font-size : 13px;
+	color : gray;
+	padding : 2px;
+	cursor : pointer;
+	z-index : 4
+}
+#boxButt:hover {
+	color : orange;
+}
+#boxButt:focus {
+	border : 1px inset #646464;
+}
