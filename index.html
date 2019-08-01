@@ -4,8 +4,11 @@
 		<title>Резюме</title>
 		<meta charset="windows-1251">
 		<meta name="author" content="DsBass">
-		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src=""></script>
 		<style>
+			* {
+				border-radius : 5px;
+			}
 			body {
 				background-image : url(./radioA.jpg);
 				background-size : cover;
@@ -14,31 +17,85 @@
 				padding : 0;
 				margin : 0
 			}
-			button {
-				background-image : url(./iColor.jpg);
-				background-size : cover;
-				background-repeat : no-repeat;
-				margin : 3%;
-				background-position : center;
-				width : 14%;
-				height : 60%;
-				float : left;
+			i {
+				background-color : rgba(0,0,0,0.6);
 				position : absolute;
-                cursor : pointer
+				width : 40%;
+				height : auto;
+				top : 30px;
+				left : 50px;
+				padding : 5px;
+				color : orange
 			}
-			iframe {
-				position : fixed;
-				margin : 3% 0% 0% 100%;
-				width : 75%;
-				height : 0
+			div {
+				position : absolute;
+				width : 70%;
+				background-color : rgba(0,0,0,0.4);
+				color : #cccccc;
+				top : 160px;
+				left : 50px;
+				padding : 10px;
 			}
 			section {
+				background-color : rgba(0,0,0,0.3);
+				font-size : 18px;
+				display : block;
+				width : 45%;
+				float : left;
+				padding : 5px;
+			}
+			p {
+				margin : 6px;
+				text-indent : 1em;
+			}
+			a {
+				color : #cccccc;
+				width : 45%;
+				position : absolute;
+				bottom : 10px;
+				margin : 10px
+			}
+			a:hover {
+				cursor : pointer;
+				color : orange;
+				background-color : rgba(0,0,0,0.4);
+			}
+			img {
+				position : relative;
+				margin : 5px;
+				width : 45%;
+			}
+			cite {
+				background-color : rgba(0,0,0,0.4);
+				display : block;
 				float : right;
-				width : 80%
+				width : 50%;
+				font-size : 15px;
+				padding : 6px;
+			}
+			b {
+				margin : 6px;
+				color : lime;
 			}
 		</style>
 	</head>
 	<body>
-	
+		<i>
+			Приношу свои извинения!!! Примерно 3 ~ 5 августа 2019 - будет доступно.
+		</i>
+		<div>
+			<section>
+				<p>Пока, в качестве примера своей работы, могу показать вот это...</p>
+				<a href="https://dsbass24.github.io/ctrl/ctrl.html">
+					<p>Тренинг по набору текста на клавиатуре.<img src="./ctrl/click.jpg"></p>
+				</a>
+			</section>
+			<cite>
+				<b>Примечание:</b>
+				<p>Приложение состоит из 2-х вариантов - простых слов на англ. языке, и сложнх, применяемых в программировании.</p>
+				<p>Кнопка с анимацией!!! Для ВЫБОРА РАБОЧЕЙ ЗОНЫ с простым или сложным набором слов.</p>
+				<p>Разобраться помогут подсказки, срабатываемые при наведении курсора мыши.</p>
+			</cite>
+		</div>
 	</body>
 </html>
