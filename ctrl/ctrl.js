@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 		create("div", "left", "");
 		create("input", "inp", "wordsInp");
+		create("div", "place", "wordsInp");
 		create("div", "right", "wordsRight");
 	}
 	/* Работает только с массивом "words.eng/rus" */
@@ -98,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}else{
 				takeBox();
 				if(localStorage.box != 0){
-					textOut("Продолжай!!!");
 					doneWords();
+					textOut("Продолжай!!!");
 				}else{
 					textOut("Печатай!!!");
 					len.onclick = function(see){
@@ -117,9 +118,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		/* Кнопка сброса ... */
 		function takeBox(){
 			create("div", "boxButt", "", "Очистить...");
-			boxButt.onclick = function(){
-				backWordsBox();
-			}
+			boxButt.addEventListener("click", backWordsBox);
 		}
 	}
 	/* Востановим позицию по данным из локального хранилища */
@@ -161,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	function clickOver(){
 		inp.placeholder = "";
 		inp.value = "";
+		tt(place, "");
 		len.onclick = function(){
 			tt(time, "В следующий раз...");
 		}
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/* Набор тегов для создания списка доступных массивов */
 	function takeSWWord(){
 		setTimeout(function(){
-			right.style = "transform:perspective(2000px) rotateY(0deg);";
+			right.style.transform = "perspective(2000px) rotateY(0deg) rotateX(0deg)";
 		}, 100);
 		one.onclick = function(j){
 			var look = j.toElement;
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 					takeSWWord();
 					butt();
 				}
-			}, i * 9);
+			}, i * 11);
 		}
 		function offColor(n){
 			var elOff = len.childNodes[n - 1];
@@ -249,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		localStorage.setItem("sto", JSON.stringify(box));
 		create("div", "left", "");
 		create("input", "inp", "swInp");
+		create("div", "place", "swInp");
 		create("button", "swBox", "swBox", "Заново...");
 		create("button", "resort", "", "Перетасовать");
 		create("div", "right", "swRight");
@@ -302,13 +303,33 @@ document.addEventListener("DOMContentLoaded", function(e){
 		inp.placeholder = say;
 		inp.size = inp.placeholder.length;
 		inf();
+		inputcolor();
 		inp.oninput = function(){
-			//tt(point, say[inp.value.length]);
+			inputcolor();
 			if(inp.value === say){
 				out();
 				inp.placeholder = "";
 			}
 			return false;
+		}
+		inp.onblur = function(){
+			inp.style.opacity = 1;
+			inp.onfocus = function(){
+				inputcolor();
+			}
+		}
+		function inputcolor(){
+			if(inp.value.length !== 0){
+				if(inp.value[inp.value.length - 1] === say[inp.value.length - 1]){
+					tt(place, inp.value);
+				}else{
+					tt(place, "");
+				}
+				inp.style.opacity = 1;
+			}else{
+				inp.style.opacity = 0;
+				tt(place, say);
+			}
 		}
 	}
 	/* Полный цикл работы = 3-м фазам проверочных вызовов: *********************************************/
