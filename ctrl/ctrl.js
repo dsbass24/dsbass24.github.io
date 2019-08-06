@@ -132,9 +132,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	/* Возврат к начальному количеству слов */
 	function backWordsBox(){
-		localStorage.setItem("box", []);
-		takeWord();
-		kart.className = "Sliz";
+		if(inp.placeholder !== "" && (localStorage.box != 0)){
+			localStorage.setItem("box", []);
+			takeWord();
+			kart.className = "Sliz";
+		}
 	}
 	/* Убирает выбранное количество слов */
 	function minWords(t){
@@ -254,9 +256,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 		create("button", "resort", "", "Перетасовать");
 		create("div", "right", "swRight");
 		swBox.onclick = function(){
-			box.splice(0, box.length);
-			localStorage.setItem("sto", JSON.stringify(box));
-			take();
+			if(inp.placeholder !== ""){
+				box.splice(0, box.length);
+				localStorage.setItem("sto", JSON.stringify(box));
+				take();
+			}
 		}
 	}
 	/* Работа с localStorage */
@@ -308,6 +312,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			inputcolor();
 			if(inp.value === say){
 				out();
+				inp.value = "";
 				inp.placeholder = "";
 			}
 			return false;
@@ -375,7 +380,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 			setTimeout(function(){
 				tt(right, a);
 				if(a === c){
-					inp.value = "";
 					out();
 				}
 			}, b * 36);
