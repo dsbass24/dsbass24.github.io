@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 						kart.className = "Sliz";
 						textOut("И никто не догадается!!!");
 					}
-				}, w * 20);
+				}, w * 30);
 			}
 			chTime(u);
 		}
@@ -304,6 +304,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	/* Для работы с инпутом и его плейс-холдером *******************************************************/
 	function inpOut(say){
+		tt(place, say);
 		inp.placeholder = say;
 		inp.size = inp.placeholder.length;
 		inf();
@@ -313,6 +314,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			if(inp.value === say){
 				out();
 				inp.value = "";
+				inputcolor();
 				inp.placeholder = "";
 			}
 			return false;
@@ -325,15 +327,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 		function inputcolor(){
 			if(inp.value.length !== 0){
-				if(inp.value[inp.value.length - 1] === say[inp.value.length - 1]){
-					tt(place, inp.value);
-				}else{
-					tt(place, "");
-				}
+				place.className = "hidd";
 				inp.style.opacity = 1;
 			}else{
 				inp.style.opacity = 0;
-				tt(place, say);
+				place.className = inp.className;
 			}
 		}
 	}
@@ -382,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				if(a === c){
 					out();
 				}
-			}, b * 36);
+			}, b * 40);
 		}
 		var symb = "";
 		for(var s = 0; s < c.length; s++){
