@@ -141,9 +141,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/* Убирает выбранное количество слов */
 	function minWords(t){
 		localStorage.setItem("box", t);
-		var childOff = len.childNodes;
 		for(var u = 0; u < t; u++){
-			childOff[u].className = "section";
+			len.childNodes[u].className = "section";
 			var chTime = function(w){
 				setTimeout(function(){
 					tt(right, "-" + w + " к ловкости...");
@@ -153,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 						kart.className = "Sliz";
 						textOut("И никто не догадается!!!");
 					}
-				}, w * 30);
+				}, w * 80);
 			}
 			chTime(u);
 		}
@@ -304,14 +303,14 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	/* Для работы с инпутом и его плейс-холдером *******************************************************/
 	function inpOut(say){
-		tt(place, say);
 		inp.placeholder = say;
+		tt(place, inp.placeholder);
 		inp.size = inp.placeholder.length;
 		inf();
 		inputcolor();
 		inp.oninput = function(){
 			inputcolor();
-			if(inp.value === say){
+			if(inp.value === inp.placeholder){
 				out();
 				inp.value = "";
 				inputcolor();
