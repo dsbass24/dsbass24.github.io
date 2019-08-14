@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		if(id === "kart"){
 			setTimeout(function(){
 				myTag.addEventListener("click", clickKart);
-			}, 1000);
+			}, 1500);
 		}
 		if(id === "boxButt"){
 			myTag.innerText = con;
@@ -89,8 +89,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/* Исключает повторное введение слов после обновления или перезагрузки */
 	function setStart(){
 		setTimeout(function(){
-			right.style.transform = "perspective(2000px) rotateY(0deg) rotateX(0deg)";
-		}, 100);
+			right.style.transform = "perspective(3000px) rotateY(0deg) rotateX(0deg)";
+		}, 10);
 		if(typeof localStorage === undefined){
 			console.log("Нету");
 		}else{
@@ -145,14 +145,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 			len.childNodes[u].className = "section";
 			var chTime = function(w){
 				setTimeout(function(){
-					tt(right, "-" + w + " к ловкости...");
 					sWork(w, "len" + w);
+					tt(right, "-" + w + " к ловкости...");
 					if(w == t - 1){
+						tt(right, "-" + t + " к ловкости...");
 						boxButt.className = "";
 						kart.className = "Sliz";
-						textOut("И никто не догадается!!!");
+						//textOut("И никто не догадается!!!");
+						out();
 					}
-				}, w * 80);
+				}, w * 20);
 			}
 			chTime(u);
 		}
@@ -172,13 +174,13 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/* Набор тегов для создания списка доступных массивов */
 	function takeSWWord(){
 		setTimeout(function(){
-			right.style.transform = "perspective(2000px) rotateY(0deg) rotateX(0deg)";
-		}, 100);
+			right.style.transform = "perspective(3000px) rotateY(0deg) rotateX(0deg)";
+		}, 10);
 		one.onclick = function(j){
 			var look = j.toElement;
 			if(look.className === "sw"){
-				look.className = "swOff";
 				wordLen(look.id);
+				look.className = "swOff";
 			}else if(look.className === "swOff"){
 				takeNew();
 				butt();
@@ -218,11 +220,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 					takeSWWord();
 					butt();
 				}
-			}, i * 11);
+			}, i * 10);
 		}
 		function offColor(n){
 			var elOff = len.childNodes[n - 1];
-			elOff.style.backgroundColor = "hsla(" + [248 - n] + ", 100%, 50%, 0.18)";
+			elOff.style.backgroundColor = "hsla(" + [248 - n] + ", 100%, 50%, 0.2)";
 		}
 		/* Компилятор с лимитом колличества добавляемых слов (до 266) */
 		function maximum(){
@@ -379,7 +381,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				if(a === c){
 					out();
 				}
-			}, b * 40);
+			}, b * 30);
 		}
 		var symb = "";
 		for(var s = 0; s < c.length; s++){
