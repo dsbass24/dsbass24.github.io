@@ -57,7 +57,7 @@ body {
 }
 /****************************************************************/
 #len {
-	box-shadow : 5px 5px 5px 0px #000000a2;
+	box-shadow : 2px 4px 6px 0px #000000a2;
 	border-radius : 5px;
 	background-image : url(ibS.JPG);
 	background-attachment : fixed;
@@ -65,13 +65,13 @@ body {
 	background-size : auto;
 	display : flex;
 	position : absolute;
-	top : 28px;
+	top : 30px;
 	left : 4px;
 	min-width : 0;
 	max-width : 98%;
 	padding-right : 19px;
 	height : 34px;
-	border : 2px ridge #777777;
+	border : 1px solid #777777;
 	overflow : hidden;
 	z-index : 699;
 }
@@ -91,17 +91,17 @@ section {
 }
 section.off {
 	cursor : pointer;
-	background-color : rgba(0, 10, 255, 0.24);
+	background-color : rgba(0, 100, 255, 0.5);
 	transform : rotate(-360deg);
 	transition : ease-out 2s;
 }
 section.on {
-	background-color : rgba(0, 180, 255, 0.7);
+	background-color : rgba(255, 153, 0, 0.9);
 	transform : rotate(0deg);
 	transition : 1s;
 }
 section.section {
-	background-color : rgba(0, 250, 55, 0.2);
+	background-color : rgba(0, 250, 31, 0.2);
 	transition : 0.3s;
 }
 section.off:hover {
@@ -110,7 +110,7 @@ section.off:hover {
 }
 /****************************************************************/
 #lookLen {
-	box-shadow : 5px 5px 5px 0px #000000a2;
+	box-shadow : 2px 4px 6px 0px #000000a2;
 	border-radius : 5px;
 	background-image : url(ibS.JPG);
 	background-size : auto;
@@ -118,13 +118,13 @@ section.off:hover {
 	background-repeat : repeat-x;
 	display : flex;
 	position : absolute;
-	top : 66px;
+	top : 67px;
 	left : 4px;
 	min-width : 0;
 	max-width : 98%;
 	padding-right : 19px;
 	height : 34px;
-	border : 2px ridge #777777;
+	border : 1px solid #777777;
 	overflow : hidden;
 	z-index : 699;
 }
@@ -227,7 +227,6 @@ input#inp {
 }
 /****************************************************************/
 #one {
-	box-shadow : 7px 9px 9px 1px #000000;
 	display : grid;
 	position : fixed;
 	width : 100px;
@@ -243,7 +242,7 @@ input#inp {
 	font-weight : bold;
 	width : 100%;
 	height : auto;
-	box-shadow : inset 0px 0px 11px 0px #000000;
+	box-shadow : inset 0px 0px 3px 0px #00000087;
 	border-radius : 4px;
 	font-size : 13px;
 	border : 1px inset #505050;
@@ -255,14 +254,14 @@ input#inp {
 }
 .sw:hover {
 	color : #000000;
-	background-color : rgba(0, 156, 255, 0.9);
+	background-color : rgba(27, 255, 0, 0.6);
 }
 .swOff {
-	background-color : rgba(0, 255, 20, 0.7);
+	background-color : rgba(0, 149, 255, 0.6);
 	cursor : pointer;
 }
 .swMax {
-	background-color : rgba(225, 0, 0, 0.5);
+	background-color : rgba(234, 0, 0, 0.55);
 	cursor : alias;
 }
 /****************************************************************/
@@ -289,7 +288,7 @@ button {
 	z-index : 6;
 }
 #kart:hover {
-	box-shadow : 4px 4px 2px 0px #000000aa;
+	box-shadow : 4px 4px 4px 0px #000000aa;
 }
 #kart:focus {
 	border : 1px inset #646464;
@@ -312,7 +311,7 @@ button {
 	transition : all 0.5s, color 0s;
 }
 #swBox:hover {
-	box-shadow : 4px 4px 2px 0px #000000aa;
+	box-shadow : 4px 4px 4px 0px #000000aa;
 	color : #03a9f4;
 	transition : all 0.5s, color 0s;
 }
@@ -338,7 +337,7 @@ button {
 	transition : all 0.5s, color 0s;
 }
 #resort:hover {
-	box-shadow : 4px 4px 2px 0px #000000aa;
+	box-shadow : 4px 4px 4px 0px #000000aa;
 	color : #03a9f4;
 	transition : all 0.5s, color 0s;
 }
@@ -365,7 +364,7 @@ button {
 	transition : all 0.5s, color 0s;
 }
 #boxButt:hover {
-	box-shadow : 4px 4px 2px 0px #000000aa;
+	box-shadow : 4px 4px 4px 0px #000000aa;
 	color : orange;
 	transition : all 0.5s, color 0s;
 }
