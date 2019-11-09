@@ -3,16 +3,18 @@
 */
 var box = [];
 var xi;
+var newSw = [];
+var swLen;
 document.addEventListener("DOMContentLoaded", function(e){
 	var myBody = document.body;
 	getBox();
-	/* Основа для создания елементов *******************************************************************/
+	/* Основа для создания елементов ***********************************************************************************************/
 	function create(tag, id, cl, con){
 		var myTag = document.createElement(tag);
 		myBody.appendChild(myTag);
 		myTag.id = id;
 		myTag.className = cl;
-		if(tag === "pre"){
+		if(id === "time"){
 			forTime.appendChild(myTag);
 		}
 		if(id === "point"){
@@ -20,12 +22,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 			myTag.innerText = con;
 		}
 		if(id === "kart"){
-			setTimeout(function(){
-				myTag.addEventListener("click", clickKart);
-			}, 1500);
+			myTag.addEventListener("click", clickKart);
 		}
 		if(id === "boxButt"){
 			myTag.innerText = con;
+			myTag.addEventListener("click", backWordsBox);
 		}
 		if(id === "resort"){
 			myTag.innerText = con;
@@ -43,6 +44,30 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 			if(cl === "sw"){
 				one.appendChild(myTag);
+				// Для управления клавишами: "вниз", "вверх", "ввод"
+				myTag.tabIndex = id + 1;
+				myTag.addEventListener("focus", mouse);
+				myTag.addEventListener("keydown", function(k){
+					var myKey = k.keyCode;
+					var nex = k.srcElement;
+					if(myKey === 40){
+						if(this !== one.lastChild){
+							nex.nextSibling.focus();
+						}else{
+							one.childNodes[0].focus();
+						}
+					}
+					if(myKey === 38){
+						if(this !== one.firstChild){
+							nex.previousSibling.focus();
+						}else{
+							one.lastChild.focus();
+						}
+					}
+					if(myKey === 13){
+						this.click();
+					}
+				});
 			}
 		}
 		if(tag === "input"){
@@ -51,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 			myTag.autofocus = "true";
 		}
 		if(tag === "center"){
-			// The end...
 			myTag.innerText = con;
 		}
 		if(id === "right"){
@@ -61,19 +85,24 @@ document.addEventListener("DOMContentLoaded", function(e){
 				takeSWWord();
 			}
 		}
+		if(tag === "span"){
+			right.appendChild(myTag);
+			myTag.innerText = con;
+		}
 	}
-	/* Общий набор тегов *******************************************************************************/
-	function rBody(){
+	/* Общий набор тегов ***********************************************************************************************************/
+	function rBody(classKart){
 		myBody.innerHTML = "";
+		create("div", "nott", "");
 		create("div", "forTime", "");
 		create("pre", "time", "");
-		create("div", "point", "", "...");
-		create("button", "kart", "Rs4b");
+		create("pre", "point", "", "...");
+		create("button", "kart", classKart);
 	}
-	rBody();
-	/* Для работы только с "words.eng/rus" массивом ****************************************************/
+	rBody("");
+	/* Для работы только с "words" массивом ****************************************************************************************/
 	function takeWord(){
-		rBody();
+		rBody("Rs4b");
 		create("div", "len", "");
 		create("div", "lookLen", "");
 		for(var i = 0; i < words.length; i++){
@@ -83,80 +112,57 @@ document.addEventListener("DOMContentLoaded", function(e){
 		create("div", "left", "");
 		create("input", "inp", "wordsInp");
 		create("div", "place", "wordsInp");
+		create("button", "boxButt", "", "Очистить...");
 		create("div", "right", "wordsRight");
 	}
-	/* Работает только с массивом "words.eng/rus" */
 	/* Исключает повторное введение слов после обновления или перезагрузки */
 	function setStart(){
-		setTimeout(function(){
-			right.style.transform = "perspective(3000px) rotateY(0deg) rotateX(0deg)";
-		}, 10);
-		if(typeof localStorage === undefined){
-			console.log("Нету");
-		}else{
-			if(localStorage.box === undefined){
-				localStorage.setItem("box", []);
-			}else{
-				takeBox();
-				if(localStorage.box != 0){
-					doneWords();
-					textOut("Продолжай!!!");
-				}else{
-					textOut("Печатай!!!");
-					len.onclick = function(see){
-						var look = see.toElement;
-						if(look !== len.lastChild){
-							if(look.className === "off"){
-								clickOver();
-								minWords(look.id);
-							}
+		if(localStorage.box != undefined){
+			if(localStorage.box == 0){
+				textOut("Печатай!!!");
+				len.onclick = function(see){
+					var look = see.toElement;
+					if(inp.placeholder != ""){
+						if(look !== len.lastChild && look.className === "off"){
+							clickOver();
+							minWords(look.id);
 						}
 					}
 				}
+			}else{
+				doneWords(localStorage.box);
+				textOut("Продолжай!!!");
 			}
-		}
-		/* Кнопка сброса ... */
-		function takeBox(){
-			create("div", "boxButt", "", "Очистить...");
-			boxButt.addEventListener("click", backWordsBox);
-		}
-	}
-	/* Востановим позицию по данным из локального хранилища */
-	function doneWords(){
-		var locS = localStorage.box;
-		for(var i = 0; i < locS; i++){
-			len.childNodes[i].className = "section";
-			len.childNodes[i].style.top = "100%";
-			lookLen.childNodes[i].style.top = 0;
+		}else{
+			localStorage.setItem("box", 0);
 		}
 	}
 	/* Возврат к начальному количеству слов */
 	function backWordsBox(){
-		if(inp.placeholder !== "" && (localStorage.box != 0)){
-			localStorage.setItem("box", []);
+		if(inp.placeholder != "" && (localStorage.box != 0)){
+			localStorage.setItem("box", 0);
 			takeWord();
-			kart.className = "Sliz";
 		}
 	}
 	/* Убирает выбранное количество слов */
 	function minWords(t){
 		localStorage.setItem("box", t);
-		for(var u = 0; u < t; u++){
-			len.childNodes[u].className = "section";
-			var chTime = function(w){
-				setTimeout(function(){
-					sWork(w, "len" + w);
-					tt(right, "-" + w + " к ловкости...");
-					if(w == t - 1){
-						tt(right, "-" + t + " к ловкости...");
-						boxButt.className = "";
-						kart.className = "Sliz";
-						//textOut("И никто не догадается!!!");
-						out();
-					}
-				}, w * 20);
-			}
-			chTime(u);
+		for(var q = 0; q < t; q++){
+			len.childNodes[q].className = "section";
+			tt(len.childNodes[q], "");
+			chTime(q);
+		}
+		function chTime(u){
+			setTimeout(function(){
+				tt(point, u + " к ловкости...");
+				sWork(u, "len" + u);
+				if(t - 1 == u){
+					boxButt.className = "";
+					kart.className = "Rs4b";
+					tt(point, t + " к ловкости...");
+					out();
+				}
+			}, u * 40);
 		}
 	}
 	/* Предотвращает нажатия во время выполнения функции minWords() */
@@ -170,12 +176,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 		kart.className = "hidd";
 		boxButt.className = "hidd";
 	}
-	/* Для работы только с "sw.lett/word" массивом *****************************************************/
-	/* Набор тегов для создания списка доступных массивов */
+	/* Для работы только с "sw" массивом *******************************************************************************************/
 	function takeSWWord(){
-		setTimeout(function(){
-			right.style.transform = "perspective(3000px) rotateY(0deg) rotateX(0deg)";
-		}, 10);
 		one.onclick = function(j){
 			var look = j.toElement;
 			if(look.className === "sw"){
@@ -184,16 +186,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}else if(look.className === "swOff"){
 				takeNew();
 				butt();
-				textOut("Тренируй пальчики!!!");
+				textOut("Тренируйся!!!");
 			}else{
 				box.splice(0, box.length);
-				localStorage.setItem("sto", JSON.stringify(box));
 				take();
 			}
 		}
 	}
+	/* Набор тегов для создания списка доступных массивов */
 	function take(){
-		rBody();
+		rBody("Sliz");
 		create("div", "len", "");
 		create("div", "one", "onedone");
 		for(var i = 0; i < sw.length; i++){
@@ -206,27 +208,29 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	/* Предпросмотр компилируемого массива */
 	function wordLen(ob){
-		one.onclick = function(){}
+		one.onclick = function(){};
 		kart.className = "hidd";
+		newSw = [sw[ob].word.length];
 		for(var i = 0; i < sw[ob].word.length; i++){
-			box.push(sw[ob].word[i]);
+			newSw[i] = {"eng":sw[ob].word[i],"rus":swTrans[ob].word[i]};
+			//newSw[i] = {"eng":sw[ob].word[i],"rus":sw[ob].word[i].length};
+			box.push(newSw[i]);
 			setTimeout(function(){
-				create("section", "", "off", null);
+				create("section", "", "off", box[len.childElementCount].eng);
 				maximum();
-				tt(right, "Добавляю...\n" + len.childNodes.length);
-				offColor(len.childNodes.length);
-				if(box.length === len.childNodes.length){
-					tt(right, "Добавлено...\n " + len.childNodes.length);
+				offColor(len.childElementCount);
+				tt(time, "Количество символов : " + len.textContent.length);
+				if(box.length === len.childElementCount){
+					tt(right, len.childElementCount + " пунктов добавлено...\nНажми ещё раз, чтобы сохранить список и начать тренировку");
 					takeSWWord();
-					butt();
 				}
-			}, i * 10);
+			}, i * 15);
 		}
 		function offColor(n){
 			var elOff = len.childNodes[n - 1];
-			elOff.style.backgroundColor = "hsla(" + [248 - n] + ", 100%, 50%, 0.2)";
+			elOff.style.backgroundColor = "hsla(" + [248 - n] + ", 100%, 50%, 0.3)";
 		}
-		/* Компилятор с лимитом колличества добавляемых слов (до 266) */
+		/* Лимит добавляемых пунктов (до 266) */
 		function maximum(){
 			var tagSize = document.getElementsByClassName("sw");
 			var getCh = len.childNodes.length;
@@ -241,13 +245,13 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	/* Для основной работы ... */
 	function takeNew(){
-		rBody();
+		rBody("Sliz");
 		create("div", "len", "");
 		create("div", "lookLen", "");
 		create("div", "one", "");
 		for(var i = 0; i < box.length; i++){
-			create("section", "sw" + i, "off", box[i]);
-			create("section", "lensw" + i, "out", box[i].length);
+			create("section", "sw" + i, "off", box[i].eng);
+			create("section", "lensw" + i, "out", box[i].rus);
 		}
 		localStorage.setItem("sto", JSON.stringify(box));
 		create("div", "left", "");
@@ -258,27 +262,36 @@ document.addEventListener("DOMContentLoaded", function(e){
 		create("div", "right", "swRight");
 		swBox.onclick = function(){
 			if(inp.placeholder !== ""){
-				box.splice(0, box.length);
-				localStorage.setItem("sto", JSON.stringify(box));
-				take();
+				restartSW();
 			}
 		}
+	}
+	/* Сброс */
+	function restartSW(){
+		box.splice(0, box.length);
+		localStorage.setItem("sto", JSON.stringify(box));
+		localStorage.setItem("swLen", 0);
+		getBox();
+		take();
 	}
 	/* Работа с localStorage */
 	function getBox(){
 		var sto = localStorage.getItem("sto");
 		if(!sto){
 			localStorage.setItem("sto", JSON.stringify(box));
+			localStorage.setItem("swLen", 0);
 		}else{
 			box = JSON.parse(sto);
+			swLen = localStorage.swLen;
 		}
 	}
 	/* Кнопка для сортировки элементов массива в *случайном порядке */
 	function butt(){
 		resort.onclick = function(){
+			localStorage.setItem("swLen", 0);
 			luckySort(box);
 			takeNew();
-			textOut("Слова отсортировалися!!!");
+			textOut("Слова перемешаны!!!");
 			resort.className = "hidd";
 		}
 		function luckySort(someArr){
@@ -287,47 +300,58 @@ document.addEventListener("DOMContentLoaded", function(e){
 			});
 		}
 	}
-	/* Кнопка играет роль главного переключателя *******************************************************/
+	/* Кнопка играет роль главного переключателя ***********************************************************************************/
 	function clickKart(){
 		kart.removeEventListener("click", clickKart);
-		if(kart.className !== "Rs4b"){
+		if(kart.className === ""){
+			takeWord();
+		}else if(kart.className === "Rs4b"){
 			if(box.length != 0){
 				takeNew();
-				textOut("Печатай!!!");
 				resort.className = "hidd";
+				doneWords(localStorage.swLen);
+				textOut("Печатай!!!");
 			}else{
 				take();
 			}
-		}else{
+		}else if(kart.className === "Sliz"){
 			takeWord();
-			kart.className = "Sliz";
 		}
 	}
-	/* Для работы с инпутом и его плейс-холдером *******************************************************/
+	/* Востановим позицию по данным из локального хранилища ************************************************************************/
+	function doneWords(locX){
+		for(var i = 0; i < locX; i++){
+			len.childNodes[i].className = "section";
+			tt(len.childNodes[i], "");
+			len.childNodes[i].style.top = "34px";
+			lookLen.childNodes[i].style.top = "0px";
+		}
+	}
+	/* Для работы с инпутом и его плейс-холдером ***********************************************************************************/
 	function inpOut(say){
 		inp.placeholder = say;
 		tt(place, inp.placeholder);
 		inp.size = inp.placeholder.length;
 		inf();
-		inputcolor();
 		inp.oninput = function(){
 			inputcolor();
-			if(inp.value === inp.placeholder){
-				out();
+			if(inp.value === inp.placeholder && inp.value.length !== 0 && inp.placeholder !== ""){
+				inp.placeholder = "";
 				inp.value = "";
 				inputcolor();
-				inp.placeholder = "";
+				inp.blur();
+				out();
 			}
 			return false;
 		}
 		inp.onblur = function(){
 			inp.style.opacity = 1;
-			inp.onfocus = function(){
-				inputcolor();
-			}
+		}
+		inp.onfocus = function(){
+			inputcolor();
 		}
 		function inputcolor(){
-			if(inp.value.length !== 0){
+			if(inp.value.length != 0){
 				place.className = "hidd";
 				inp.style.opacity = 1;
 			}else{
@@ -345,150 +369,157 @@ document.addEventListener("DOMContentLoaded", function(e){
 		if(tagOn === undefined){
 			var tagOff = document.getElementsByClassName("off")[0];
 			if(tagOff !== undefined){
-				inp.focus();
 				inpOut(tagOff.textContent);
+				inp.focus();
 				tagOff.className = "on";
 			}else{
 				if(right.className === "wordsRight"){
-					localStorage.setItem("box", []);
+					localStorage.setItem("box", 0);
+				}else{
+					localStorage.setItem("swLen", 0);
+					box.splice(0, box.length);
+					localStorage.setItem("sto", JSON.stringify(box));
 				}
-				rBody();
-				create("center", "over", "", "Класс !!! У-у-у ...!!! " + localStorage.tot);
+				rBody("");
+				create("center", "over", "", "Твой опыт " + localStorage.tot + " нажатий");
 				create("div", "gif", "");
-				kart.className = "Sliz";
+				kart.className = "";
 				forTime.className = "hidd";
 			}
 		}else{
-			sWork(tagOn.id, "len" + tagOn.id);
+			right.innerHTML = "";
 			totalMem(tagOn.textContent.length);
+			sWork(tagOn.id, "len" + tagOn.id);
+			combText(tagOn.textContent, document.getElementById("len" + tagOn.id).textContent);
+			tt(tagOn, "");
 			tagOn.className = "section";
-			var wDone = document.getElementsByClassName("section").length;
-			if(right.className === "wordsRight"){
-				localStorage.setItem("box", wDone);
-				textOut(words[tagOn.id].eng + " : " + words[tagOn.id].rus);
-			}else{
-				box.shift();
-				localStorage.setItem("sto", JSON.stringify(box));
-				textOut(wDone + " введено...");
-			}
+			wDone();
 		}
 	}
-	/* Для вывода основного текста с небольшой задержкой ***********************************************/
-	function textOut(c){
-		function tagTime(a, b){
-			setTimeout(function(){
-				tt(right, a);
-				if(a === c){
-					out();
-				}
-			}, b * 30);
-		}
-		var symb = "";
-		for(var s = 0; s < c.length; s++){
-			symb = symb + c[s];
-			tagTime(symb, s);
+	function wDone(){
+		var d = document.getElementsByClassName("section").length;
+		if(right.className === "wordsRight"){
+			localStorage.setItem("box", d);
+		}else if(right.className === "swRight"){
+			localStorage.setItem("swLen", d);
 		}
 	}
-	/* Визуальный счетчик ******************************************************************************/
+	function combText(tA, tB){
+		if(tA !== tB){
+			textOut(tA + " : " + tB);
+		}else{
+			textOut(tA);
+		}
+	}
+	/* Визуальный счетчик **********************************************************************************************************/
 	function sWork(idA, idB){
-		document.getElementById(idA).style.top = "100%";
-		document.getElementById(idB).style.top = "0%";
+		document.getElementById(idA).style.top = "34px";
+		document.getElementById(idB).style.top = "0px";
 	}
-	/* Подсказка по колличеству оставшихся слов ********************************************************/
+	/* Подсказка по колличеству оставшихся слов ************************************************************************************/
 	function inf(){
 		var place = inp.placeholder;
 		var ofOff = document.getElementsByClassName("off").length;
 		if(ofOff - 1 !== 0){
-			tt(time, "Осталось " + ofOff + " ...");
+			tt(time, "Осталось " + ofOff + " пунктов, содержащих " + len.textContent.length + " символов.");
 		}else{
-			tt(point, "...");
 			tt(time, "Осталось ввести ‹" + place + "›, и всё.");
 		}
 	}
-	/* Мышиная подсказка *******************************************************************************/
-	document.body.addEventListener("mouseover", function(my){
-		var mySome = my.toElement;
-		if(mySome.id === "kart"){
+	/* Подсказки *******************************************************************************************************************/
+	myBody.addEventListener("mouseover", mouse);
+	function mouse(curr){
+		if(curr.target.id === "kart"){
 			tt(time, "Нажми для выбора набора слов");
-		}else if(mySome.id === "point"){
+		}else if(curr.target.id === "point"){
 			tt(point, "Здесь будут подсказки...");
 			tt(time, "Там будут подсказки...");
-		}else if(mySome.id === "time"){
+		}else if(curr.target.id === "time"){
 			tt(time, "Здесь будут подсказки...");
 			tt(point, "Там будут подсказки...");
-		}else if(mySome.id === "forTime"){
+		}else if(curr.target.id === "forTime"){
 			tt(time, "Здесь будут подсказки...");
 			tt(point, "И здесь...");
-		}else if(mySome.id === "resort"){
-			tt(time, "Кнопка для случайной сортировки слов...");
+		}else if(curr.target.id === "resort"){
+			tt(time, "Кнопка для перемешивания слов...");
+		}else if(curr.target.id === "inp"){
 			if(inp.placeholder !== ""){
-				tt(point, "Можно сортировать...");
-			}else{
-				tt(point, "сортировать нечего...");
-			}
-		}else if(mySome.id === "inp"){
-			tt(time, "Для ввода...");
-			if(inp.placeholder === ""){
-				tt(point, "...пока нечего вводить");
-			}else{
+				tt(time, "Для ввода...");
 				inp.focus();
 			}
-		}else if(mySome.id === "boxButt"){
+		}else if(curr.target.id === "boxButt"){
 			tt(time, "Начать заново...");
-		}else if(mySome.id === "len"){
+		}else if(curr.target.id === "len"){
 			tt(time, "Содержит список еще не введенных слов...");
-		}else if(mySome.id === "lookLen"){
+		}else if(curr.target.id === "lookLen"){
 			tt(time, "Содержит список уже введенных слов...");
 		}else{
-			if(mySome.className === "sw"){
+			if(curr.target.className === "sw"){
 				tt(time, "Добавить список...");
-				tt(right, "Список слов на букву " + "'" + sw[mySome.id].lett + "'");
-			}else if(mySome.className === "swOff"){
-				tt(time, "Добавлен...");
-				tt(right, "Подтвердить...");
-			}else if(mySome.className === "swMax"){
+				tt(right, "Добавить в список слова на букву " + "'" + sw[curr.target.id].lett + "'");
+			}else if(curr.target.className === "swOff"){
+				tt(time, "Нажми ещё раз, чтобы сохранить список и начать тренировку...");
+				tt(right, "Сохранить...");
+			}else if(curr.target.className === "swMax"){
 				tt(time, "Превышает допустимый лимит...");
 				tt(right, "Отменить...");
-			}else if(mySome.className === "swBox"){
+			}else if(curr.target.className === "swBox"){
 				tt(time, "Очистить...");
-				tt(point, "");
-				tt(right, "");
-			}else if(mySome.className === "off"){
-				tt(time, mySome.textContent);
+			}else if(curr.target.className === "off"){
+				tt(time, curr.target.textContent);
 				tt(point, "Не отвлекайся!!!");
-			}else if(mySome.className === "out"){
+			}else if(curr.target.className === "out"){
 				tt(time, "Не отвлекайся!!!");
-				tt(point, mySome.textContent);
-			}else{
-				tt(time, "");
-				tt(point, "");
+				tt(point, curr.target.textContent);
 			}
 		}
-	});
-	/* Для вывода текста указанным елементом ***********************************************************/
+	}
+	/* Для вывода текста указанным елементом ***************************************************************************************/
 	function tt(x, con){
 		x.innerText = con;
 	}
-	/* Общая статистика ********************************************************************************/
+	/* Общая статистика ************************************************************************************************************/
 	function totalMem(doneThis){
-		if(localStorage.tot !== undefined){
+		if(localStorage.tot != undefined){
 			xi = parseInt(doneThis) + parseInt(localStorage.tot);
 			localStorage.setItem("tot", xi);
-			tt(point, localStorage.tot);
+			visual(doneThis);
 		}else{
 			localStorage.setItem("tot", doneThis);
 		}
+		function visual(a){
+			for(var d = 0; d <= a; d++){
+				var dTime = function(d){
+					setTimeout(function(){
+						tt(point, (xi - a) + d);
+						if(point.outerText !== localStorage.tot){
+							point.className = "onpoint";
+						}else{
+							point.className = "";
+						}
+					}, d * 36);
+				}
+				dTime(d);
+			}
+		}
 	}
+	/* Для вывода основного текста с небольшой задержкой ***************************************************************************/
+	function textOut(c){
+		function tagTime(b){
+			var validTag = document.getElementById("symb" + b);
+			setTimeout(function(){
+				if(validTag.className != undefined && validTag.className === "hidd"){
+					validTag.className = "onspan";
+					if(right.childNodes[c.length - 1] === right.lastChild && right.childNodes[c.length - 1].className === "onspan"){
+						out();
+					}
+				}
+			}, b * 40);
+		}
+		for(var s = 0; s < c.length; s++){
+			create("span", "symb" + s, "hidd", c[s]);
+			tagTime(s);
+		}
+	}
+	console.log(document.lastModified);
 });
-/*var iNumb = {
-	0: "0.png",
-	1: "1.png",
-	2: "2.png",
-	3: "3.png",
-	4: "4.png",
-	5: "5.png",
-	6: "6.png",
-	7: "7.png",
-	8: "8.png",
-	9: "9.png"
-}*/

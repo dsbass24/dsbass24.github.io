@@ -6,6 +6,7 @@
 	padding : 0;
 }
 body {
+	transform : none;
 	background-color : gray;
 	background-image : url(ibCenter.JPG);
 	background-attachment : fixed;
@@ -14,18 +15,49 @@ body {
 	font-family : Courier;
 	overflow : hidden;
 }
-.hidd {
-	visibility : hidden;
-	transition : 0s;
+/*********************************************************************************************************/
+#nott {
+	position : fixed;
+	top : 120px;
+	width : 100%;
+	height : 100%;
+	z-index : 0;
 }
-/****************************************************************/
+/*********************************************************************************************************/
+span {
+	position : relative;
+	font-style : italic;
+	top : 0px;
+	text-shadow : 5px 1.5px 2px #ff4401;
+}
+span.hidd {
+	color : #82828200;
+	opacity : 0;
+}
+span.onspan {
+	text-shadow : 0px 0px 0px #66002200;
+	opacity : 1;
+	color : inherit;
+	transition : text-shadow cubic-bezier(0.12, -40, 0.99, -7) 5s, color 0s, opacity ease-in 0.01s;
+}
+span.onspan:hover {
+	text-shadow : 13px 3px 0.24px #01cc334f;
+	transition : text-shadow 0s;
+}
+/*********************************************************************************************************/
+.hidd {
+	transform : scale(0);
+	transition : 0.2s;
+}
+/*********************************************************************************************************/
 #over {
 	position : absolute;
-	top : 30px;
+	top : 40px;
 	left : 13%;
-	font-size : 16px;
+	font-size : 26px;
 	font-weight : bold;
-	color : #03a9f4;
+	text-shadow : -2px 6px 3px black;
+	color : #0af;
 }
 #gif {
 	border-radius : 9px;
@@ -38,113 +70,126 @@ body {
 	top : 100px;
 	left : 150px;
 }
-/****************************************************************/
+/*********************************************************************************************************/
 #forTime {
-	position : absolute;
-	background-color : rgba(140, 140, 140, 0);
+	text-shadow : 2px 2px 1px black;
+	position : fixed;
+	/*font-style : italic;*/
+	color : #dadada;
+	font-size : 16px;
 	width : 100%;
 	height : 20px;
+	overflow : hidden;
+	z-index : -3;
 }
 #time {
-	color : #37b5ff;
-	font-size : 15px;
-	float : left;
+	position : absolute;
+	top : 0;
+	z-index : 1;
 }
 #point {
-	font-size : 16px;
-	color : #c3c3c3;
-	float : right;
-}
-/****************************************************************/
-#len {
-	box-shadow : 2px 4px 6px 0px #000000a2;
-	border-radius : 5px;
-	background-image : url(ibS.JPG);
-	background-attachment : fixed;
-	background-repeat : repeat-x;
-	background-size : auto;
-	display : flex;
 	position : absolute;
-	top : 30px;
+	right : 4px;
+	top : 0;
+	z-index : 0;
+	transition : right ease-in 4s, color 0s;
+}
+#point.onpoint {
+	right : 36px;
+	color : yellow;
+	transition : color 1s, right 4s;
+}
+/*********************************************************************************************************/
+#len {
+	box-shadow : 2px 3px 2px 1px #000000aa;
+	border-radius : 5px;
+	background-color : #0000009a;
+	background-image : url(ibS.JPG);
+	background-origin : border-box;
+	background-attachment : unset;
+	background-position : unset;
+	background-size : cover;
+	display : flex;
+	position : fixed;
+	top : 28px;
 	left : 4px;
 	min-width : 0;
 	max-width : 98%;
-	padding-right : 19px;
+	padding-right : 20px;
 	height : 34px;
-	border : 1px solid #777777;
+	border : 1px solid #5d5d5d;
 	overflow : hidden;
-	z-index : 699;
+	z-index : 1;
 }
 section {
+	top : 0px;
+	cursor : pointer;
+	position : relative;
+	width : 19px;
+	height : 30px;
 	white-space : pre;
 	overflow : hidden;
-	border-radius : 3px;
-	position : relative;
-	margin : 0px -20px 0px 0px;
+	border-radius : 4px;
+	margin-right : -20px;
 	padding : 1px;
+	background-color : rgba(0, 0, 0, 0);
 	background-size : cover;
 	border : 1px solid black;
 	font-size : 0px;
-	width : 19px;
-	height : 30px;
-	top : 0;
 }
 section.off {
-	cursor : pointer;
-	background-color : rgba(0, 100, 255, 0.5);
-	transform : rotate(-360deg);
-	transition : ease-out 2s;
-}
-section.on {
-	background-color : rgba(255, 153, 0, 0.9);
-	transform : rotate(0deg);
-	transition : 1s;
-}
-section.section {
-	background-color : rgba(0, 250, 31, 0.2);
-	transition : 0.3s;
+	background-color : rgba(0, 100, 255, 0.4);
+	transition : background-color ease-in 2s;
 }
 section.off:hover {
-	background-color : rgba(0, 255, 0, 0.8);
+	background-color : rgba(0, 210, 255, 1);
 	transition : 0s;
 }
-/****************************************************************/
+section.on {
+	background-color : rgba(0, 255, 0, 1);
+	transition : background-color ease-in 0.6s;
+}
+section.section {
+	background-color : rgba(0, 255, 0, 0.6);
+	transition : background-color 0s, top 0.5s;
+}
+section.out {
+	top : -34px;
+	background-image : url(Buba.jpg);
+	transition : 0.5s;
+}
+section.out:hover {
+	transform : scale(1.1);
+	transition : 0s;
+}
+/*********************************************************************************************************/
 #lookLen {
-	box-shadow : 2px 4px 6px 0px #000000a2;
+	box-shadow : 2px 3px 2px 1px #000000aa;
 	border-radius : 5px;
+	background-color : #0000009a;
 	background-image : url(ibS.JPG);
-	background-size : auto;
-	background-attachment : fixed;
-	background-repeat : repeat-x;
+	background-origin : border-box;
+	background-attachment : unset;
+	background-position : unset;
+	background-size : cover;
 	display : flex;
-	position : absolute;
-	top : 67px;
+	position : fixed;
+	top : 65px;
 	left : 4px;
 	min-width : 0;
 	max-width : 98%;
-	padding-right : 19px;
+	padding-right : 20px;
 	height : 34px;
-	border : 1px solid #777777;
+	border : 1px solid #5d5d5d;
 	overflow : hidden;
-	z-index : 699;
+	z-index : 2;
 }
-section.out {
-	box-shadow : inset 0px 0px 5px 0px #0000007a;
-	background-image : url(Chirva.jpg);
-	top : -100%;
-	transition : 0.3s;
-}
-section.out:hover {
-	box-shadow : none;
-	transition : 0s;
-}
-/****************************************************************/
+/*********************************************************************************************************/
 #place {
-	box-shadow : inset 0px 0px 11px 0px #000000;
 	position : fixed;
 	border : 1px inset #696969;
 	background-color : rgba(0,0,0,0.5);
-	z-index : 997;
+	z-index : 7;
 	top : 124px;
 	left : 200px;
 	font-family : Courier;
@@ -153,11 +198,16 @@ section.out:hover {
 	padding-left : 1px;
 	padding-right : 6px;
 	border-radius : 9px;
+	cursor : default;
+	transition : 0s;
+}
+#place.hidd {
+	opacity : 1;
 }
 #left {
 	position : fixed;
 	border-radius : 9px;
-	z-index : 998;
+	z-index : 8;
 	top : 124px;
 	left : 200px;
 }
@@ -169,63 +219,58 @@ input#inp {
 	padding-right : 6px;
 	border-radius : 9px;
 	background-color : rgba(0,0,0,0.5);
-	cursor : none;
-	z-index : 99;
-	opacity: 0;
+	cursor : default;
+	opacity : 0;
+	transition : 0s;
 }
 .wordsInp {
 	color : #cbcbcb;
 	border : 1px outset #696969;
 }
 .swInp {
-	color : #03a9f4;
+	color : #0399f4;
 	border : 1px outset #696969;
 }
 .wordsInp:focus {
-	box-shadow : inset 0px 0px 12px 0px #000000;
-	background : rgba(0,0,0,0);
+	background : rgba(0,0,0,0.5);
 	outline : none;
 	border : 1px inset #696969;
-	cursor : none;
+	cursor : default;
 	opacity: 1;
 }
 .swInp:focus {
-	box-shadow : inset 0px 0px 12px 0px #000000;
-	background : rgba(0,0,0,0);
+	background : rgba(0,0,0,0.5);
 	outline : none;
 	border : 1px inset #696969;
-	cursor : none;
+	cursor : default;
 	opacity: 1;
 }
-/****************************************************************/
+/*********************************************************************************************************/
 #right {
-	box-shadow : inset 0px 0px 12px 0px #000000;
-	overflow : hidden;
 	position : fixed;
 	background-color : rgba(0,0,0,0.5);
 	width : 700px;
 	height : 170px;
-	padding : 2px;
-	font-size : 30px;
-	font-style : italic;
-	z-index : 90;
 	top : 210px;
 	left : 200px;
+	padding : 6px;
+	font-size : 26px;
+	font-family : monospace;
+	/*font-style : italic;*/
 	color : #797979;
-	border : 1px solid #444444;
+	border : 1px solid black;
 	border-radius : 9px;
 	cursor : default;
-	transition : cubic-bezier(0.3, 0, 0.45, -0.4) 1.4s;
+	z-index : 10;
+	transition : 3s;
 }
 #right.wordsRight {
-	color : #ababab;
-	transform : perspective(1400px) rotateY(-180deg) rotateX(540deg);
+	color : #aaaaaa;
 }
 #right.swRight {
-	color : #03a9f4;
-	transform : perspective(1400px) rotateY(180deg) rotateX(540deg);
+	color : #0099ff;
 }
-/****************************************************************/
+/*********************************************************************************************************/
 #one {
 	display : grid;
 	position : fixed;
@@ -233,141 +278,143 @@ input#inp {
 	top : 80px;
 	left : -100%;
 	z-index : 4;
-	transition : ease 1s;
 }
 #one.onedone {
-	left : 80px;
+	left : 75px;
 }
-#one section {
-	font-weight : bold;
+#one.onedone section {
+	border-radius : 5px;
+	position : relative;
+	outline : none;
+	transform : scale(1);
+	background-color : rgb(130, 130, 130);
+	background-image : none;
+	color : black;
+	cursor : pointer;
+	font-weight : bolder;
+	padding : 1px;
 	width : 100%;
 	height : auto;
-	box-shadow : inset 0px 0px 3px 0px #00000087;
-	border-radius : 4px;
 	font-size : 13px;
-	border : 1px inset #505050;
+	border : 1px outset #555555;
+	
 }
-.sw {
-	background-color : rgba(0, 0, 0, 0.6);
-	color : #767676;
-	cursor : pointer;
+#one.onedone section:focus {
+	box-shadow : 1.5px 2.5px 3px 1px #000000dd;
+	transform : scale(1.1);
+	z-index : 2;
+	transition : 0s;
 }
-.sw:hover {
-	color : #000000;
-	background-color : rgba(27, 255, 0, 0.6);
+#one section.sw {
+	z-index : 0;
+	box-shadow : none;
+	transition : ease-in 0.1s;
 }
-.swOff {
-	background-color : rgba(0, 149, 255, 0.6);
-	cursor : pointer;
+#one section.sw:hover {
+	background-color : rgb(150, 150, 150);
+	transform : scale(1.2);
+	box-shadow : 2px 5px 3px 2px #000000aa;
+	z-index : 3;
+	transition : 0s;
 }
-.swMax {
-	background-color : rgba(234, 0, 0, 0.55);
+#one section.swOff {
+	box-shadow : 0.5px 1.5px 2px 0.5px #000000ff;
+	background-color : rgb(0, 160, 0);
+	transform : scale(1.06);
+	transition : ease-in 0.1s;
+	z-index : 1;
+}
+#one section.swMax {
+	background-color : rgb(130, 0, 0);
 	cursor : alias;
+	transition : 0.1s;
 }
-/****************************************************************/
+/*********************************************************************************************************/
 button {
+	position : fixed;
+	background-color : #000000;
+	padding : 4px;
+	width : 120px;
 	box-shadow : none;
 	outline-style : none;
 	font-weight : bold;
 	font-family : Courier;
-	transition : 0.6s;
+	font-size : 14px;
+	cursor : pointer;
+	border-radius : 5px;
+	border : 1px outset #646464;
+	color : gray;
+	transition : ease-in 0.6s;
 }
 #kart {
 	background-image : url(o3h.gif);
 	background-position : center;
+	background-repeat : no-repeat;
 	background-size : cover;
-	display : block;
-	position : fixed;
-	width : 60px;
-	height : 45px;
-	top : 160px;
+	width : 55px;
+	height : 46px;
+	top : 250px;
 	left : 4px;
-	border : 1px outset #646464;
-	border-radius : 4px;
-	cursor : pointer;
-	z-index : 6;
+}
+#kart.Rs4b {
+	background-image : url(1.png);
+	background-origin : content-box;
+	background-blend-mode : luminosity;
+	background-size : contain;
+}
+#kart.Sliz {
+	background-image : url(2.png);
+	background-origin : content-box;
+	background-blend-mode : luminosity;
+	background-size : contain;
 }
 #kart:hover {
-	box-shadow : 4px 4px 4px 0px #000000aa;
+	box-shadow : 0px 0px 6px 0px #00a9f4;
+	background-blend-mode : normal;
+	transition : 0s;
 }
 #kart:focus {
-	border : 1px inset #646464;
+	border-style : inset;
+	box-shadow : none;
 }
-/****************************************************************/
+/*********************************************************************************************************/
 #swBox {
-	padding : 2px;
-	font-weight : bold;
-	background-color : rgba(0, 0, 0, 0.6);
-	border : 1px outset #646464;
-	border-radius : 4px;
-	font-size : 13px;
-	color : gray;
-	position : fixed;
-	width : 100px;
-	height : auto;
-	top : 130px;
+	top : 210px;
 	left : 4px;
-	cursor : pointer;
-	transition : all 0.5s, color 0s;
 }
 #swBox:hover {
-	box-shadow : 4px 4px 4px 0px #000000aa;
-	color : #03a9f4;
-	transition : all 0.5s, color 0s;
+	box-shadow : 0px 0px 6px 0px #ff4000;
+	color : #ff4000;
+	transition : 0s;
 }
 #swBox:focus {
-	border : 1px inset #646464;
+	box-shadow : none;
+	border-style : inset;
 }
 #resort {
-	width : 100px;
-	background-position : center;
-	background-size : cover;
-	display : block;
-	position : fixed;
-	top : 220px;
+	top : 310px;
 	left : 4px;
-	background-color : rgba(0, 0, 0, 0.6);
-	border : 1px outset #646464;
-	border-radius : 4px;
-	font-size : 13px;
-	color : gray;
-	padding : 2px;
-	cursor : pointer;
-	z-index : 645;
-	transition : all 0.5s, color 0s;
 }
 #resort:hover {
-	box-shadow : 4px 4px 4px 0px #000000aa;
+	box-shadow : 0px 0px 6px 0px #03a9f4;
 	color : #03a9f4;
-	transition : all 0.5s, color 0s;
+	transition : 0s;
 }
 #resort:focus {
-	border : 1px inset #646464;
-}
-/****************************************************************/
-#boxButt {
 	box-shadow : none;
-	font-weight : bold;
-	position : fixed;
-	width : 100px;
-	height : auto;
-	top : 130px;
+	border-style : inset;
+}
+/*********************************************************************************************************/
+#boxButt {
+	top : 210px;
 	left : 4px;
-	background-color : rgba(0, 0, 0, 0.6);
-	border : 1px outset #646464;
-	border-radius : 4px;
-	font-size : 13px;
-	color : gray;
-	padding : 2px;
-	cursor : pointer;
-	z-index : 4;
-	transition : all 0.5s, color 0s;
 }
 #boxButt:hover {
-	box-shadow : 4px 4px 4px 0px #000000aa;
+	box-shadow : 0px 0px 6px 0px orange;
 	color : orange;
-	transition : all 0.5s, color 0s;
+	transition : 0s;
 }
 #boxButt:focus {
-	border : 1px inset #646464;
+	box-shadow : none;
+	border-style : inset;
 }
