@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 		}else{
 			localStorage.setItem("box", 0);
+			setStart();
 		}
 	}
 	/* Возврат к начальному количеству слов */
