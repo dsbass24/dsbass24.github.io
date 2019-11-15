@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	/* Возврат к начальному количеству слов */
 	function backWordsBox(){
-		if(inp.placeholder != "" && (localStorage.box != 0)){
+		if(inp.placeholder != "" && localStorage.box != 0){
 			localStorage.setItem("box", 0);
 			takeWord();
 		}
@@ -431,7 +431,15 @@ document.addEventListener("DOMContentLoaded", function(e){
 	myBody.addEventListener("mouseover", mouse);
 	function mouse(curr){
 		if(curr.target.id === "kart"){
-			tt(time, "Нажми для выбора набора слов");
+			if(curr.target.className === "Rs4b"){
+				tt(time, "Сейчас Ты находишся в локации №1. Нажми, чтобы перейти к более сложным словам в локации №2.");
+				tt(point, "...");
+			}else if(curr.target.className === "Sliz"){
+				tt(time, "Сейчас Ты в локации №2. Нажми, чтобы вернуться в локацию №1.");
+				tt(point, "...");
+			}else{
+				tt(time, "Нажми для выбора локации");
+			}
 		}else if(curr.target.id === "point"){
 			tt(point, "Здесь будут подсказки...");
 			tt(time, "Там будут подсказки...");
