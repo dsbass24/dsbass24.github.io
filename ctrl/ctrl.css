@@ -112,7 +112,7 @@ span.onspan:hover {
 	background-origin : border-box;
 	background-attachment : unset;
 	background-position : unset;
-	background-size : cover;
+	/*background-size : cover;*/
 	display : flex;
 	position : fixed;
 	top : 28px;
@@ -175,7 +175,7 @@ section.out:hover {
 	background-origin : border-box;
 	background-attachment : unset;
 	background-position : unset;
-	background-size : cover;
+	/*background-size : cover;*/
 	display : flex;
 	position : fixed;
 	top : 65px;
