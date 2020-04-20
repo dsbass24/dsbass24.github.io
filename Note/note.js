@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	create("input", "fSize", "", "Text size");
 	localReady();
 	/*======================================================================================*/
-	// ‘оздает строку в списке при наличии в localStorage записей "basslist"
-	// длЯ работы проэцируем в массив 'loc'
+	// РЎРѕР·РґР°РµС‚ СЃС‚СЂРѕРєСѓ РІ СЃРїРёСЃРєРµ РїСЂРё РЅР°Р»РёС‡РёРё РІ localStorage Р·Р°РїРёСЃРµР№ "basslist"
+	// РґР»СЏ СЂР°Р±РѕС‚С‹ РїСЂРѕСЌС†РёСЂСѓРµРј РІ РјР°СЃСЃРёРІ 'loc'
 	function localReady(){
 		var basslist = localStorage.basslist;
 		if(!basslist){
@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Љнопка id="add" после нажатиЯ - добавлЯет заметку сначала в массив 'loc'
-	// затем сохранЯет весь массив в localStorage 'basslist'
+	// РљРЅРѕРїРєР° id="add" РїРѕСЃР»Рµ РЅР°Р¶Р°С‚РёСЏ - РґРѕР±Р°РІР»СЏРµС‚ Р·Р°РјРµС‚РєСѓ СЃРЅР°С‡Р°Р»Р° РІ РјР°СЃСЃРёРІ 'loc'
+	// Р·Р°С‚РµРј СЃРѕС…СЂР°РЅСЏРµС‚ РІРµСЃСЊ РјР°СЃСЃРёРІ РІ localStorage 'basslist'
 	function addText(){
 		var val = myText.value;
 		if(val.length !== 0){
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// ЋпределЯет доступный интерфейс управлениЯ заметками
+	// РћРїСЂРµРґРµР»СЏРµС‚ РґРѕСЃС‚СѓРїРЅС‹Р№ РёРЅС‚РµСЂС„РµР№СЃ СѓРїСЂР°РІР»РµРЅРёСЏ Р·Р°РјРµС‚РєР°РјРё
 	function selectFunc(){
 		var deltag = document.getElementsByClassName("dellist");
 		if(deltag[0] != undefined){
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// ‚ыделЯем заметки, и делаем что задумали
+	// Р’С‹РґРµР»СЏРµРј Р·Р°РјРµС‚РєРё, Рё РґРµР»Р°РµРј С‡С‚Рѕ Р·Р°РґСѓРјР°Р»Рё
 	function puttext(){
 		collist.onclick = function(k){
 			var mytag = k.toElement;
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// „лЯ визуального фокуса ввода 
+	// Р”Р»СЏ РІРёР·СѓР°Р»СЊРЅРѕРіРѕ С„РѕРєСѓСЃР° РІРІРѕРґР° 
 	function inpListen(){
 		if(myText.value.length === 0){
 			add.style.left = "-90px";
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// “далить заметку
+	// РЈРґР°Р»РёС‚СЊ Р·Р°РјРµС‚РєСѓ
 	function delText(){
 		var newloc = [];
 		var deltag = document.getElementsByClassName("dellist")[0];
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		selectFunc();
 	}
 	/*======================================================================================*/
-	// ђедактируем заметку в <textarea>
+	// Р РµРґР°РєС‚РёСЂСѓРµРј Р·Р°РјРµС‚РєСѓ РІ <textarea>
 	function corText(){
 		myText.focus();
 		var delCont = document.getElementsByClassName("dellist")[0];
@@ -216,12 +216,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 		inpListen();
 	}
 	/*======================================================================================*/
-	// ... текст ...
+	// ... С‚РµРєСЃС‚ ...
 	function newCon(tag, con){
 		tag.innerText = con;
 	}
 	/*======================================================================================*/
-	// ‘оздаЮм структуру списка заметок после редактированиЯ
+	// РЎРѕР·РґР°С‘Рј СЃС‚СЂСѓРєС‚СѓСЂСѓ СЃРїРёСЃРєР° Р·Р°РјРµС‚РѕРє РїРѕСЃР»Рµ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
 	function newColList(idClass){
 		var newloc = [];
 		var colCon = collist.childNodes;
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		colCon[idClass].className = "dellist";
 	}
 	/*======================================================================================*/
-	// Џеремещение выделенной заметки выше
+	// РџРµСЂРµРјРµС‰РµРЅРёРµ РІС‹РґРµР»РµРЅРЅРѕР№ Р·Р°РјРµС‚РєРё РІС‹С€Рµ
 	function upText(){
 		var el = document.getElementsByClassName("dellist");
 		if(el[0] != undefined && el.length === 1){
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Џеремещение выделенной заметки ниже
+	// РџРµСЂРµРјРµС‰РµРЅРёРµ РІС‹РґРµР»РµРЅРЅРѕР№ Р·Р°РјРµС‚РєРё РЅРёР¶Рµ
 	function dwText(){
 		var el = document.getElementsByClassName("dellist");
 		if(el[0] != undefined && el.length === 1){
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// ќто длЯ скроллинга колесом мыши
+	// Р­С‚Рѕ РґР»СЏ СЃРєСЂРѕР»Р»РёРЅРіР° РєРѕР»РµСЃРѕРј РјС‹С€Рё
 	collist.addEventListener("wheel", function(s){
 		var idN = s.toElement;
 		var d = s.deltaY;
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// „лЯ быстрого листаниЯ клавишами клавиатуры
+	// Р”Р»СЏ Р±С‹СЃС‚СЂРѕРіРѕ Р»РёСЃС‚Р°РЅРёСЏ РєР»Р°РІРёС€Р°РјРё РєР»Р°РІРёР°С‚СѓСЂС‹
 	document.addEventListener("keydown", function(k){
 		var myKey;
 		if(k.target.id === "myText"){
@@ -344,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 	/*======================================================================================*/
-	// „лЯ изменениЯ размера текста заметок
+	// Р”Р»СЏ РёР·РјРµРЅРµРЅРёСЏ СЂР°Р·РјРµСЂР° С‚РµРєСЃС‚Р° Р·Р°РјРµС‚РѕРє
 	function newProp(prop){
 		platform.style.fontSize = this.value + "px";
 	}
