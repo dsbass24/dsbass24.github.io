@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				collist.innerHTML = "";
 				localReady();
 			}else{
+				localStorage.setItem("basslist", JSON.stringify(newloc));
 				loc.splice(0, loc.length);
 				collist.innerHTML = "";
 				localReady();
