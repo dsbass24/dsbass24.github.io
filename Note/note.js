@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		colCon[idClass].className = "dellist";
 	}
 	/*======================================================================================*/
-	// Перемещение выделенной заметки выше
+	// Перемещение заметки выше
 	function upText(){
 		var el = document.getElementsByClassName("dellist");
 		if(el[0] != undefined && el.length === 1){
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Перемещение выделенной заметки ниже
+	// Перемещение заметки ниже
 	function dwText(){
 		var el = document.getElementsByClassName("dellist");
 		if(el[0] != undefined && el.length === 1){
