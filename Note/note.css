@@ -204,6 +204,7 @@ ul:hover {
 	transition : 0s;
 }
 li {
+	text-shadow : 0px 11px 2px #000000;
 	/*transform : rotateX(360deg);
 	background-image : url(P1.png);
 	background-image : url(clearBassBlack4.jpg);*/
@@ -223,7 +224,8 @@ li {
 	transition : ease-in-out 0.3s;
 }
 li.lib:hover {
-	text-shadow : 0px 11px 2px #000000;
+	/*text-shadow : 0px 11px 2px #000000;*/
+	text-shadow : 0px 0px 0px #000000;
 	/*background-color : #5555559f;
 	box-shadow : 0px 0px 3px 0px #ffffff44;*/
 	z-index : 4;
@@ -233,6 +235,7 @@ li.dellist {
 	/*background-image : none;
 	transform : rotateX(0deg);
 	border-style : inset;*/
+	text-shadow : 0px 0px 0px #000000;
 	background-color : #000000aa;
 	overflow : hidden;
 	margin : 30px 0px 30px 0px;
