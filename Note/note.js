@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	// Выделяем заметки, и делаем что задумали
 	function puttext(){
 		collist.onclick = function(k){
-			var mytag = k.toElement;
+			var mytag = k.target;
 			if(mytag.className === "lib"){
 				mytag.className = "dellist";
 				selectFunc();
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	});
 	/*======================================================================================*/
 	platform.addEventListener("click", function(c){
-		var el = c.toElement;
+		var el = c.target;
 		if(el.id === "collist" && myText.value.length === 0){
 			if(platform.offsetLeft != 0){
 				myText.style.top = "-50px";
