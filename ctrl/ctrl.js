@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			if(localStorage.box == 0){
 				textOut("Печатай!!!");
 				len.onclick = function(see){
-					var look = see.toElement;
+					var look = see.target;
 					if(inp.placeholder != ""){
 						if(look !== len.lastChild && look.className === "off"){
 							clickOver();
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/* Для работы только с "sw" массивом *******************************************************************************************/
 	function takeSWWord(){
 		one.onclick = function(j){
-			var look = j.toElement;
+			var look = j.target;
 			if(look.className === "sw"){
 				wordLen(look.id);
 				look.className = "swOff";
