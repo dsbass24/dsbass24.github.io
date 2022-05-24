@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 						}else{
 							point.className = "";
 						}
-					}, d * 36);
+					}, d * 46);
 				}
 				dTime(d);
 			}
