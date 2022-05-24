@@ -27,7 +27,7 @@ body {
 span {
 	position : relative;
 	font-style : italic;
-	/*text-shadow : 5px 1.5px 2px #ff5501;*/
+	text-shadow : 5px 1.5px 2px #ff5501;
 }
 span.hidd {
 	top : 20px;
@@ -38,11 +38,11 @@ span.hidd {
 span.onspan {
 	top : 0px;
 	left : 0px;
-	/*text-shadow : 1px 2px 1px black;*/
+	text-shadow : 1px 2px 1px black;
 	opacity : 1;
 	color : inherit;
-	transition : 0.05s, opacity ease-in 0.18s, left ease-in 0.19s, top ease-in 0.09s;
-	/*transition : text-shadow cubic-bezier(0.12, -40, 0.99, -7) 5s, color 0s, opacity ease-in 0.01s;*/
+	/*transition : 0.05s, opacity ease-in 0.18s, left ease-in 0.19s, top ease-in 0.09s;*/
+	transition : text-shadow cubic-bezier(0.12, -60, 0.99, -20) 4s, color 0s, opacity ease-in 0.01s;
 }
 span.onspan:hover {
 	/*text-shadow : 13px 3px 0.24px #01cc334f;
