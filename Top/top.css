@@ -1,0 +1,17 @@
+/*
+	Top page...
+	
+	CSS
+*/
+* {
+	margin : 0;
+	padding : 0;
+	font-family : Monospace;
+}
+body {
+	background-color : gray;
+	background-image : url(img/radioA.jpg);
+	background-size : cover;
+	background-attachment : fixed;
+	font-size : 20px;
+}
