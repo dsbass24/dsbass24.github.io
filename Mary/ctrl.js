@@ -130,8 +130,17 @@ document.addEventListener("DOMContentLoaded", function(e){
 					}
 				}
 			}else{
-				doneWords(localStorage.box);
-				textOut("Продолжай Любимка моя!!!");
+				/////////////////////////////////////////////////////////////
+				if(localStorage.box > words.length){
+					localStorage.setItem("box", 0);
+					setStart();
+				}else{
+					doneWords(localStorage.box);
+					textOut("Продолжай Любимка моя!!!");
+				}
+				/////////////////////////////////////////////////////////////
+				//doneWords(localStorage.box);
+				//textOut("Продолжай Любимка моя!!!");
 			}
 		}else{
 			localStorage.setItem("box", 0);
