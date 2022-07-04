@@ -1,0 +1,287 @@
+var words = [
+{
+    eng: "prepares",
+    rus: "готовиться"
+}, {
+	eng: "solve",
+    rus: "решать"
+}, {
+    eng: "confident",
+    rus: "уверенный"
+}, {
+    eng: "stakeholder",
+    rus: "заинтересованный человек"
+}, {
+    eng: "handle",
+    rus: "разбираться"
+}, {
+    eng: "receive",
+    rus: "получать мейл"
+}, {
+    eng: "notification",
+    rus: "уведомление"
+}, {
+    eng: "strengths",
+    rus: "сильные стороны"
+}, {
+    eng: "weakness",
+    rus: "слабые стороны"
+}, {
+    eng: "feature",
+    rus: "особенность"
+}, {
+    eng: "responsible",
+    rus: "ответственный"
+}, {
+    eng: "coast",
+    rus: "берег"
+}, {
+    eng: "peninsula",
+    rus: "полуостров"
+}, {
+    eng: "scarf",
+    rus: "шарф"
+}, {
+    eng: "neighbourhood",
+    rus: "соседство"
+}, {
+    eng: "convenient",
+    rus: "удобный, подходящий"
+}, {
+    eng: "concern",
+    rus: "беспокойство"
+}, {
+    eng: "issue",
+    rus: "проблема"
+}, {
+    eng: "bring up",
+    rus: "начать разговор на тему"
+}, {
+    eng: "take up",
+    rus: "начать делать"
+}, {
+    eng: "fall aport",
+    rus: "разбиться"
+}, {
+    eng: "chip in",
+    rus: "помогать"
+}, {
+    eng: "come down with",
+    rus: "заболеть"
+}, {
+    eng: "abhor",
+    rus: "Ненавидеть"
+}, {
+    eng: "abrogate",
+    rus: "Отменить"
+}, {
+    eng: "abstain",
+    rus: "Воздержаться"
+}, {
+    eng: "desist",
+    rus: "Запретить"
+}, {
+    eng: "obey",
+    rus: "Подчиняться, слушаться"
+}, {
+    eng: "shield",
+    rus: "Защищать"
+}, {
+    eng: "contribute",
+    rus: "делать пожертвования"
+}, {
+    eng: "courage",
+    rus: "смелость"
+}, {
+    eng: "dedication",
+    rus: "верность"
+}, {
+    eng: "embarrassment",
+    rus: "Затруднение"
+}, {
+    eng: "investigate",
+    rus: "исследовать"
+}, {
+    eng: "persuade",
+    rus: "убеждать"
+}, {
+    eng: "prescription",
+    rus: "Рекомендация"
+}, {
+    eng: "profit",
+    rus: "выгода"
+}, {
+    eng: "remarkable",
+    rus: "значительный"
+}, {
+    eng: "spokesman",
+    rus: "представитель"
+}, {
+    eng: "suspect",
+    rus: "подозревать"
+}, {
+    eng: "Abolish",
+    rus: "Отменять"
+}, {
+    eng: "Boast",
+    rus: "Хвастаться"
+}, {
+    eng: "disheveled",
+    rus: "растрепанный, неопрятный"
+}, {
+    eng: "attitude",
+    rus: "отношение (к чему-то)"
+}, {
+    eng: "Attend",
+    rus: "посещать, присутствовать"
+}, {
+    eng: "rigorous",
+    rus: "Строгий"
+}, {
+    eng: "Fiery",
+    rus: "Вспыльчивый"
+}, {
+    eng: "Modest",
+    rus: "скромный"
+}, {
+    eng: "Reckless",
+    rus: "Безумный"
+}, {
+    eng: "Sly",
+    rus: "хитрый"
+}, {
+    eng: "Arrogant",
+    rus: "высокомерный"
+}, {
+    eng: "impertinent",
+    rus: "наглый, дерзкий, грубый, нахальный"
+}, {
+    eng: "Responsive",
+    rus: "отзывчивый"
+}, {
+    eng: "strong-willed",
+    rus: "волевой"
+}, {
+    eng: "Apartfrom",
+    rus: "Помимо"
+}, {
+    eng: "Exact",
+    rus: "Точный"
+}, {
+    eng: "Statement",
+    rus: "Утверждение"
+}, {
+    eng: "Borrow",
+    rus: "Одолжить"
+}, {
+    eng: "tend",
+    rus: "иметь тенденцию"
+}, {
+    eng: "choke",
+    rus: "удушение"
+}, {
+    eng: "interrupt",
+    rus: "перебивать"
+}, {
+    eng: "avoid",
+    rus: "избежать"
+}, {
+    eng: "deny",
+    rus: "отрицать"
+}, {
+    eng: "consider",
+    rus: "принимать во внимание"
+}, {
+    eng: "admit",
+    rus: "признавать"
+}, {
+    eng: "postpone",
+    rus: "откладывать"
+}, {
+    eng: "suggest",
+    rus: "предложить"
+}, {
+    eng: "inherit",
+    rus: "унаследовать"
+}, {
+    eng: "driving license",
+    rus: "водительские права"
+}, {
+    eng: "partially",
+    rus: "частично"
+}, {
+    eng: "gossip",
+    rus: "сплетни"
+}, {
+    eng: "regret",
+    rus: "сожалеть"
+}, {
+    eng: "chase",
+    rus: "преследовать"
+}, {
+    eng: "rivalry",
+    rus: "соперничество"
+}, {
+    eng: "blade",
+    rus: "лезвие"
+}, {
+    eng: "cushion",
+    rus: "подушка"
+}, {
+    eng: "hammer",
+    rus: "молоток"
+}, {
+    eng: "flippers",
+    rus: "ласты"
+}, {
+    eng: "clap",
+    rus: "хлопать"
+}, {
+    eng: "in advance",
+    rus: "заранее"
+}, {
+    eng: "affair",
+    rus: "мероприятие"
+}, {
+    eng: "appreciate",
+    rus: "оценить"
+}, {
+    eng: "anxious",
+    rus: "беспокойный"
+}, {
+    eng: "violent",
+    rus: "жестокий"
+}, {
+    eng: "dedication",
+    rus: "самоотдача"
+}, {
+    eng: "signature",
+    rus: "подпись"
+}, {
+    eng: "eager",
+    rus: "сильно хотеть"
+}, {
+    eng: "scheme",
+    rus: "замысел"
+}, {
+    eng: "determined",
+    rus: "настойчивый"
+}, {
+    eng: "hinder",
+    rus: "препятствовать"
+}, {
+    eng: "congestion",
+    rus: "затор"
+}, {
+    eng: "valid",
+    rus: "действительный"
+}, {
+    eng: "asset",
+    rus: "достоинство"
+}, {
+    eng: "survey",
+    rus: "опрос"
+}, {
+    eng: "review",
+    rus: "отзыв"
+}];
