@@ -2,6 +2,7 @@
 	Note
 	Created: 10/15/2019 02:06:54
 	dsbass@rambler.ru
+	dsbass24@gmail.com
 */
 var loc = [];
 document.addEventListener("DOMContentLoaded", function(e){
@@ -78,8 +79,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	create("input", "fSize", "", "Text size");
 	localReady();
 	/*======================================================================================*/
-	// Создает строку в списке при наличии в localStorage записей "basslist"
-	// для работы проэцируем в массив 'loc'
+	// Создает строку в списке при наличии в localStorage записей "basslist".
+	// Для работы проэцируем в массив 'loc'.
 	function localReady(){
 		var basslist = localStorage.basslist;
 		if(!basslist){
@@ -97,8 +98,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Кнопка id="add" после нажатия - добавляет заметку сначала в массив 'loc'
-	// затем сохраняет весь массив в localStorage 'basslist'
+	// Кнопка id="add" после нажатия - добавляет заметку сначала в массив 'loc',
+	// а затем сохраняет весь массив в localStorage 'basslist'.
 	function addText(){
 		var val = myText.value;
 		if(val.length !== 0){
@@ -125,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 				sec = "0" + sec;
 			}
 			var myDate = days + "/" + mon + "/" + year + " " + hours + ":" + min + ":" + sec;
-			//val = document.lastModified + "\n" + val;
 			val = myDate + "\n" + val;
 			loc.unshift([val]);
 			localStorage.setItem("basslist", JSON.stringify(loc));
@@ -136,21 +136,33 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Определяет доступный интерфейс управления заметками
+	// Определяет доступный интерфейс управления заметками.
 	function selectFunc(){
+		// Определяем выделеную заметку.
 		var deltag = document.getElementsByClassName("dellist");
+		// Если есть хотябы одна выделеная заметка.
 		if(deltag[0] != undefined){
+			// Кнопка для удаления заметок теперь доступна.
 			del.style.bottom = "35%";
+			// Если выделена только одна заметка.
 			if(deltag.length === 1){
+				// Доступна кнопка для редактирования заметки.
 				cor.style.left = "4px";
+				// Две кнопки для изменения очерёдности (порядкового номера заметки) в списке.
+				// Кнопка для перемещения заметки "выше",
 				up.style.right = "10px";
+				// и кнопка для перемещения заметки "ниже".
 				dw.style.right = "10px";
 			}else{
+				// Если выделеных заметок больше одной,
+				// то кнопки для редактирования и перемещения заметок - недоступны.
 				cor.style.left = "-100px";
 				up.style.right = "-35px";
 				dw.style.right = "-35px";
 			}
 		}else{
+			// Если нихера не выделено!
+			// Все кнопки управления заметками - недоступны.
 			cor.style.left = "-100px";
 			del.style.bottom = "-50px";
 			up.style.right = "-35px";
@@ -158,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Выделяем заметки, и делаем что задумали
+	// Выделяем заметки, и делаем что задумали.
 	function puttext(){
 		collist.onclick = function(k){
 			var mytag = k.target;
@@ -172,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Для визуального фокуса ввода 
+	// Для визуального фокуса ввода.
 	function inpListen(){
 		if(myText.value.length === 0){
 			add.style.left = "-90px";
@@ -186,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Удалить заметку
+	// Удалить заметку.
 	function delText(){
 		var newloc = [];
 		var deltag = document.getElementsByClassName("dellist")[0];
@@ -209,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		selectFunc();
 	}
 	/*======================================================================================*/
-	// Редактируем заметку в <textarea>
+	// Редактируем заметку в <textarea>.
 	function corText(){
 		myText.focus();
 		var delCont = document.getElementsByClassName("dellist")[0];
@@ -222,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		tag.innerText = con;
 	}
 	/*======================================================================================*/
-	// Создаём структуру списка заметок после редактирования
+	// Создаём структуру списка заметок после редактирования.
 	function newColList(idClass){
 		var newloc = [];
 		var colCon = collist.childNodes;
@@ -236,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		colCon[idClass].className = "dellist";
 	}
 	/*======================================================================================*/
-	// Перемещение заметки выше
+	// Перемещение заметки выше.
 	function upText(){
 		var el = document.getElementsByClassName("dellist");
 		if(el[0] != undefined && el.length === 1){
@@ -250,8 +262,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 		}
 	}
-	/*======================================================================================*/
-	// Перемещение заметки ниже
+	// Перемещение заметки ниже.
 	function dwText(){
 		var el = document.getElementsByClassName("dellist");
 		if(el[0] != undefined && el.length === 1){
@@ -266,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
-	// Это для скроллинга колесом мыши
+	// Это для скроллинга колесом мыши.
 	collist.addEventListener("wheel", function(s){
 		var idN = s.toElement;
 		var d = s.deltaY;
@@ -295,6 +306,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 	/*======================================================================================*/
+	// Визуальное и практическое разделение функционала.
+	// Установка приоритетности отображения для просмотра списка заметок,
+	// и во время создания новой заметки.
 	platform.addEventListener("click", function(c){
 		var el = c.target;
 		if(el.id === "collist" && myText.value.length === 0){
@@ -309,12 +323,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 	/*======================================================================================*/
+	// Слушатель скроллинга страницы.
 	this.addEventListener("scroll", contEl);
+	// Функция визуально компенсирует отсутствие скроллбара.
 	function contEl(){
+		met.max = platform.offsetHeight - innerHeight;
+		// Полоса прокрутки документа.
+		met.value = scrollY;
+		/*******************************************************************
 		//fSize.style = "transform:rotate(-" + scrollY + "deg)";
 		var topList = collist.childNodes;
-		met.max = platform.offsetHeight - innerHeight;
-		met.value = scrollY;
 		for(var t = 0; t < topList.length; t++){
 			//console.log(topList[t].offsetTop, scrollY, innerHeight);
 			if(topList[t].offsetTop - pageYOffset > 0){
@@ -323,9 +341,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 				//topList[t].style = "transform:rotate3d(1, 0, 0, 0deg)";
 			}
 		}
+		*******************************************************************/
 	}
 	/*======================================================================================*/
-	// Для быстрого листания клавишами клавиатуры
+	// Для быстрого листания клавишами клавиатуры.
 	document.addEventListener("keydown", function(k){
 		var myKey;
 		if(k.target.id === "myText"){
@@ -345,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 	/*======================================================================================*/
-	// Для изменения размера текста заметок
+	// Для изменения размера текста заметок.
 	function newProp(prop){
 		platform.style.fontSize = this.value + "px";
 	}
