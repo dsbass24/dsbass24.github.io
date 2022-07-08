@@ -1,0 +1,102 @@
+/*
+	MyHTML
+	
+	css
+*/
+* {
+	margin : 0;
+	padding : 0;
+	color : #ffa500;
+	font-family : Monospace;
+	font-size : 18px;
+	background-size : cover;
+	background-attachment : fixed;
+	transition : ease-out 0.4s;
+}
+/*****************************************************************/
+.on {
+	background-color : gray;
+	position : fixed;
+	width : 100%;
+	height : 100%;
+	z-index : 10;
+}
+.off {
+	opacity : 0;
+}
+/*****************************************************************/
+
+body {
+	background-image : url(../img/ibCenter.JPG);
+}
+/*****************************************************************/
+#myTime {
+	position : fixed;
+	top : 5px;
+	right : 10px;
+}
+/*****************************************************************/
+#imageButt {
+	top : 50px;
+	right : 90px;
+	height : 70px;
+	background-color : #00000000;
+	display : block;
+	position : fixed;
+}
+/*****************************************************************/
+#myDiv {
+	/* box-shadow: 2px 2px 2px black; */
+	border-radius : 6px;
+	top : 20px;
+	left : 20px;
+	/* width : 55%; */
+	/* background-color : #444444ee;
+	margin : 10px; */
+	position : absolute;
+}
+img {
+	/* padding : 2px; */
+	background-color : #0000007a;
+	box-shadow: 6px 6px 7px black;
+	border-radius : 6px;
+	width : 90px;
+	position : absolute;
+	right : 2px;
+	/* border : 1px solid black; */
+}
+img:hover {
+	transform : scale(1.2);
+}
+span.img {
+	color : #c4c4c4;
+	box-shadow: 4px 4px 4px black;
+	white-space : pre;
+	width : 100%;
+	display : block;
+	position : relative;
+	background-color : #636363d9;
+	border : 1px solid black;
+	border-radius : 6px;
+	padding : 4px;
+	margin : 0px;
+	cursor : pointer;
+}
+span.img:hover {
+	/* background-color : #ccccccc7; */
+	color : #f4f4f4;
+	width : 126%;
+	transition : 0.2s, color 0s;
+	z-index : 1;
+}
+/*****************************************************************/
+button {
+	/* display : block;
+	width : 98%;
+	height : 40%;
+	background-color : #00000055;
+	padding : 4px;
+	margin : 4px;
+	border : 1px solid black;
+	position : relative; */
+}
