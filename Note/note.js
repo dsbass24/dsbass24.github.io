@@ -6,11 +6,29 @@
 */
 var loc = [];
 document.addEventListener("DOMContentLoaded", function(e){
+	
 	var myBody = document.body;
+	
+	// Заглушка прелоадера. ****************************
+	create("div", "preload", "on", "Note loading...");
+	window.onload = function(){
+		if(document.readyState == "complete"){
+			preload.className = "off";
+		}
+	}
+	//**************************************************
+	
 	function create(nametag, idtag, classtag, con){
+		
 		var tag = document.createElement(nametag);
 		myBody.appendChild(tag);
 		tag.id = idtag;
+		
+		if(idtag === "preload"){
+			tag.className = classtag;
+			tag.innerText = con;
+		}
+		
 		if(idtag === "myText"){
 			tag.placeholder = "... note ...";
 			tag.addEventListener("focus", inpListen);
@@ -44,10 +62,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 			tag.addEventListener("click", corText);
 		}
 		if(idtag === "up"){
+			
+			tag.src = con; // Адрес изображения
+			
 			tag.addEventListener("click", upText);
 			tag.title = "up";
 		}
 		if(idtag === "dw"){
+			
+			tag.src = con; // Адрес изображения
+			
 			tag.addEventListener("click", dwText);
 			tag.title = "down";
 		}
@@ -67,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	/*======================================================================================*/
+	
 	create("textarea", "myText");
 	create("div", "platform");
 	create("meter", "met");
@@ -74,8 +99,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 	create("button", "add");
 	create("button", "del");
 	create("button", "cor");
-	create("button", "up");
-	create("button", "dw");
+	//create("button", "up");
+	create("img", "up", "", "img/Up.ico");
+	//create("button", "dw");
+	create("img", "dw", "", "img/Down.ico");
 	create("input", "fSize", "", "Text size");
 	localReady();
 	/*======================================================================================*/
@@ -157,16 +184,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 				// Если выделеных заметок больше одной,
 				// то кнопки для редактирования и перемещения заметок - недоступны.
 				cor.style.left = "-100px";
-				up.style.right = "-35px";
-				dw.style.right = "-35px";
+				up.style.right = "-120px";
+				dw.style.right = "-120px";
 			}
 		}else{
 			// Если нихера не выделено!
 			// Все кнопки управления заметками - недоступны.
 			cor.style.left = "-100px";
 			del.style.bottom = "-50px";
-			up.style.right = "-35px";
-			dw.style.right = "-35px";
+			up.style.right = "-120px";
+			dw.style.right = "-120px";
 		}
 	}
 	/*======================================================================================*/
