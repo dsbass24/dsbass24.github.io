@@ -7,21 +7,11 @@
 // Списки: name, iconLink
 // smailList, pngList, pngList2, pngList3.
 
-
-/*
-document.addEventListener('readystatechange', function(e){
-	console.log(document.readyState);
-}); 
-window.addEventListener("load", loaded);
-function loaded(e){
-	console.log(e);
-}
-*/
 document.addEventListener("DOMContentLoaded", function(e){
 	//console.log(e);
 	var myBody = document.body;
 	
-	create("div", "first", "on", "");
+	create("div", "preload", "on", "");
 	/*************************************************************************************/
 	function create(nameTag, idTag, classTag, contentTag){
 		var tag = document.createElement(nameTag);
@@ -29,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 		tag.className = classTag;
 		myBody.appendChild(tag);
 		
-		if(idTag === "first"){
-			//console.log(first.className);
+		if(idTag === "preload"){
+			//console.log(preload.className);
 		}
 		if(nameTag === "img"){
 			tag.src = contentTag;
@@ -110,11 +100,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 	//myDiv.innerHTML = JSON.stringify(newList);
 	
 	/*************************************************************************************/
+	// Заглушка прелоадера.
 	window.onload = function(){
 
 		if(document.readyState == "complete"){
-			first.className = "off";
-			//console.log(first.className);
+			preload.className = "off";
+			//console.log(preload.className);
 		}
 	}
 	/*************************************************************************************/
@@ -153,3 +144,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/*************************************************************************************/
 	/*************************************************************************************/
 });
+/*
+document.addEventListener('readystatechange', function(e){
+	console.log(document.readyState);
+}); 
+window.addEventListener("load", loaded);
+function loaded(e){
+	console.log(e);
+}
+*/
