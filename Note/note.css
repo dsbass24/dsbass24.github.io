@@ -51,7 +51,7 @@ textarea {
 	background-image : url(clearBassBlack4.jpg);
 	font-size : 16px;
 	width : 260px;
-	height : 30px;
+	height : 40px;
 	resize : none;
 	z-index : 1;
 	outline : none;
@@ -186,8 +186,10 @@ img#up:focus, button#dw:focus {
 }
 #fSize:hover {
 	box-shadow : 0px 0px 13px 0px #ffffff99;
-	/*transform : scale(1.1);*/
-	transition : 0s;
+	transform : scale(1.7);
+	left : 40px;
+	bottom : 30px;
+	transition : 0.3s;
 }
 /*===============================================================*/
 #platform {

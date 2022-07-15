@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			collist.innerHTML = "";
 			localReady();
 			inpListen();
+			selectFunc();
 		}
 	}
 	/*======================================================================================*/
@@ -250,10 +251,14 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/*======================================================================================*/
 	// Редактируем заметку в <textarea>.
 	function corText(){
-		myText.focus();
 		var delCont = document.getElementsByClassName("dellist")[0];
-		myText.value = delCont.innerText;
-		inpListen();
+		if(delCont){
+			myText.focus();
+			myText.value = delCont.innerText;
+			inpListen();
+		}else{
+			selectFunc();
+		}
 	}
 	/*======================================================================================*/
 	// ... текст ...
@@ -340,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		var el = c.target;
 		if(el.id === "collist" && myText.value.length === 0){
 			if(platform.offsetLeft != 0){
-				myText.style.top = "-50px";
+				myText.style.top = "-60px";
 				platform.style.left = "0px";
 				inpListen();
 			}else{
@@ -394,5 +399,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 	// Для изменения размера текста заметок.
 	function newProp(prop){
 		platform.style.fontSize = this.value + "px";
+		myText.style.fontSize = this.value + "px";
 	}
 });
