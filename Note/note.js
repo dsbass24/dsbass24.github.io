@@ -388,9 +388,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	});
 	/*======================================================================================*/
-	// Для изменения размера текста заметок.
+	// Для изменения размера текста в поле ввода,
+	// и изменения размера текста готовых заметок.
 	function newProp(prop){
-		platform.style.fontSize = this.value + "px";
 		myText.style.fontSize = this.value + "px";
+		platform.style.fontSize = this.value + "px";
 	}
 });
