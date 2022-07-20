@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/*======================================================================================*/
 	// Это для скроллинга колесом мыши.
 	collist.addEventListener("wheel", function(s){
-		var idN = s.toElement;
+		var idN = s.target;
 		var d = s.deltaY;
 		if(d > 0){
 			if(idN.localName === "li"){
