@@ -394,4 +394,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myText.style.fontSize = this.value + "px";
 		platform.style.fontSize = this.value + "px";
 	}
+	this.onmouseover = function(elem){
+		var targ = elem.target;
+		if(targ.localName === "body"){
+			console.log(targ.localName);
+		}
+	}
 });
