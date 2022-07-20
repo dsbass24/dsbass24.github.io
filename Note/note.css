@@ -69,12 +69,6 @@ textarea:focus {
 	z-index : 3;
 }
 /*===============================================================*/
-img {
-	position : fixed;
-	border-radius : 5px;
-	cursor : pointer;
-	transition : ease-in-out 0.2s;
-}
 button {
 	background-size : cover;
 	background-attachment : local;
@@ -137,35 +131,33 @@ button#cor:hover {
 	box-shadow : 0px 0px 9px 0px #aaaaaa;
 	transition : box-shadow 0s;
 }
-img#up {
-	width : 100px;
-	height : 120px;
+button#up {
+	width : 30px;
+	height : 50px;
 	background-color : rgba(0,0,0,0.4);
-	/* background-image : url(up.jpg);
-	background-image : url(img/Up.ico); */
+	background-image : url(up.jpg);
 	top : 25px;
-	right : -120px;
+	right : -35px;
 	z-index : 1;
 }
-img#up:hover {
+button#up:hover {
 	box-shadow : 0px 0px 13px 0px #fff800;
 	transition : box-shadow 0s;
 }
-img#dw {
-	width : 100px;
-	height : 120px;
+button#dw {
+	width : 30px;
+	height : 50px;
 	background-color : rgba(0,0,0,0.4);
-	/* background-image : url(dw.jpg);
-	background-image : url(img/Down.ico); */
-	top : 155px;
-	right : -120px;
+	background-image : url(dw.jpg);
+	top : 85px;
+	right : -35px;
 	z-index : 1;
 }
-img#dw:hover {
+button#dw:hover {
 	box-shadow : 0px 0px 13px 0px #fff800;
 	transition : box-shadow 0s;
 }
-img#up:focus, button#dw:focus {
+button#up:focus, button#dw:focus {
 	box-shadow : 0px 0px 0px 0px #00000000;
 }
 /*===============================================================*/
