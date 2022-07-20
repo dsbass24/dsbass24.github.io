@@ -83,9 +83,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 			tag.value = 15;
 			tag.title = con;
 		}
+		if(idtag === "myPrompt"){
+			tag.className = classtag;
+		}
 	}
 	/*======================================================================================*/
-	
 	create("textarea", "myText");
 	create("div", "platform");
 	create("meter", "met");
@@ -96,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	create("button", "up");
 	create("button", "dw");
 	create("input", "fSize", "", "Text size");
+	create("div", "myPrompt", "closed");
 	localReady();
 	/*======================================================================================*/
 	// Создает строку в списке при наличии в localStorage записей "basslist".
@@ -394,10 +397,26 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myText.style.fontSize = this.value + "px";
 		platform.style.fontSize = this.value + "px";
 	}
+	/*======================================================================================*/
+	// Подсказки.
 	this.onmouseover = function(elem){
 		var targ = elem.target;
-		if(targ.localName === "body"){
-			console.log(targ.localName);
+		myPrompt.innerText = "";
+		if(targ.localName === "body" || targ.localName === "html"){
+			myPrompt.className = "closed";
+		}else{
+			if(targ.localName === "ul"){
+				myPrompt.innerText = "scrolling/open/close";
+				myPrompt.className = "open";
+			}
+			if(targ.localName === "li"){
+				myPrompt.innerText = "note";
+				myPrompt.className = "open";
+			}
+			if(targ.localName === "meter"){
+				myPrompt.innerText = "scroll-size";
+				myPrompt.className = "open";
+			}
 		}
 	}
 });
