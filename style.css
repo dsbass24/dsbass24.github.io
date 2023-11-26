@@ -20,6 +20,7 @@ body {
 /*****************************************************************/
 
 #preload.on {
+	margin : 0px;
 	background-color : gray;
 	position : fixed;
 	width : 100%;
