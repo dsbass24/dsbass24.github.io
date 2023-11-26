@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			//console.log(preload.className);
 		}
 		if(nameTag === "li"){
-			collist.appendChild(tag);
+			colList.appendChild(tag);
 			tag.innerText = contentTag;
 		}
 	}
