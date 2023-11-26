@@ -22,6 +22,7 @@ body {
 /*****************************************************************/
 
 #preload.on {
+	border-radius : 0px;
 	background-color : gray;
 	position : fixed;
 	width : 100%;
