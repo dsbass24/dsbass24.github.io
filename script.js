@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	
 	/*************************************************************************************/
-	create("div", "myDiv", "", "");
+
 	create("pre", "myTime", "", "");
 	//create("", "", "", "");
 	//create("", "", "", "");

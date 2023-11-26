@@ -14,9 +14,11 @@ body {
 	background-repeat : no-repeat;
 	background-attachment : fixed;
 	padding : 0;
-	margin : 0
+	margin : 0;
 }
+
 /*****************************************************************/
+
 #preload.on {
 	background-color : gray;
 	position : fixed;
@@ -28,23 +30,22 @@ body {
 	opacity : 0;
 	z-index : 0;
 }
+
 /*****************************************************************/
+
 #myTime {
 	position : fixed;
 	top : 5px;
 	right : 10px;
+	padding: 4px;
+	color : #ffdf00;
+	font-size : 15px;
+	background-color : black;
 }
+
 /*****************************************************************/
-#myDiv {
-	/* box-shadow: 2px 2px 2px black; */
-	border-radius : 6px;
-	top : 20px;
-	left : 20px;
-	/* width : 55%; */
-	/* background-color : #444444ee;
-	margin : 10px; */
-	position : absolute;
-}
+
+
 /*****************************************************************/
 
 /*****************************************************************/
