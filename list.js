@@ -7,7 +7,7 @@
 var myLinks = [
 	{
 		name : "Note",
-		pagesLincs : "Note/index.html"
+		pagesLincs : "https://dsbass24.github.io/Note/index.html"
 	},
 	{
 		name : "ctrl",
@@ -18,15 +18,15 @@ var myLinks = [
 		pagesLincs : "https://dsbass24.github.io/MyHTML/"
 	},
 	{
-		name : "",
-		pagesLincs : ""
+		name : "Top",
+		pagesLincs : "Top/index.html"
 	},
 	{
-		name : "",
-		pagesLincs : ""
+		name : "Mary",
+		pagesLincs : "Mary/ctrl.html"
 	},
 	{
-		name : "",
-		pagesLincs : ""
+		name : "Репозиторий. dsbass24",
+		pagesLincs : "https://github.com/dsbass24"
 	}
 ];
