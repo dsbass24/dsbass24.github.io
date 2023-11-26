@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 		if(idTag === "preload"){
 			//console.log(preload.className);
 		}
+		if(nametag === "li"){
+			collist.appendChild(tag);
+			tag.innerText = contentTag;
+		}
 	}
 	
 	/*************************************************************************************/
@@ -26,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 	//create("", "", "", "");
 	/*************************************************************************************/
 	create("div", "platform", "", "");
+	create("ul", "colList", "", "");
 	function getPages(){
 		for(var i = 0; i < myLinks.length; i++){
-			console.log(myLinks[i].name);
+			//console.log(myLinks[i].name);
+			create("li", "", "lib", myLinks[i].name);
 		}
 	}
 	getPages();
