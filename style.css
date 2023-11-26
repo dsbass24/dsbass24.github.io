@@ -8,9 +8,10 @@
 	margin : 0px;
 	padding : 0px;
 	border-radius : 5px;
-	font-family : monospace;
+	/* font-family : monospace; */
+	font-family : consolas, monospace;
 	font-size : 24px;
-	transition : ease-out 0.3s;
+	transition : ease-out 0.2s;
 }
 body {
 	background-image : url(./radioA.jpg);
@@ -22,6 +23,7 @@ body {
 /*****************************************************************/
 
 #preload.on {
+	color : #ff9000;
 	border-radius : 0px;
 	background-color : gray;
 	position : fixed;
@@ -41,20 +43,19 @@ body {
 	top : 5px;
 	right : 10px;
 	padding: 4px;
-	color : #ffdf00;
-	font-size : 15px;
-	background-color : black;
+	color : #ff9000;
+	font-size : 20px;
+	background-color : #00000099;
 }
 
 /*****************************************************************/
 #platform {
 	width : 60%;
-	height : 60%;
 	background-color : #00000099;
 	padding: 4px;
 }
 a {
-	display : list-item;
+	display : block;
 	margin : 6px;
 	border : 1px solid #999999;
 	text-align : center;
@@ -63,7 +64,9 @@ a {
 }
 a:hover {
 	background-color : #000000ff;
+	border : 1px solid #ffffff;
 	transition : 0s;
+	transform : scale(1.04);
 }
 
 /*****************************************************************/

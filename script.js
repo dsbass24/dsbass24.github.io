@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myBody.appendChild(tag);
 		
 		if(idTag === "preload"){
+			//tag.innerText = contentTag;
 			//console.log(preload.className);
 		}
 		if(nameTag === "a"){
@@ -28,17 +29,14 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/*************************************************************************************/
 	create("div", "preload", "on", "");
 	create("pre", "myTime", "", "");
+	create("div", "platform", "", "");
 	//create("", "", "", "");
 	//create("", "", "", "");
 	/*************************************************************************************/
-	create("div", "platform", "", "");
 	
 	function getPages(){
 		for(var i = 0; i < myLinks.length; i++){
-			//console.log(myLinks[i].name);
-			
 			create("a", myLinks[i].name, "", myLinks[i].pagesLincs);
-			
 		}
 	}
 	getPages();

@@ -28,5 +28,9 @@ var myLinks = [
 	{
 		name : "Репозиторий. dsbass24",
 		pagesLincs : "https://github.com/dsbass24"
+	},
+	{
+		name : "Справочник",
+		pagesLincs : "https://developer.mozilla.org/ru/docs/Web/HTML"
 	}
 ];
