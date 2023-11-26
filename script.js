@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		if(idTag === "preload"){
 			//console.log(preload.className);
 		}
-		if(nametag === "li"){
+		if(nameTag === "li"){
 			collist.appendChild(tag);
 			tag.innerText = contentTag;
 		}
