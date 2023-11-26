@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 	var myBody = document.body;
 	
-	create("div", "preload", "on", "");
 	/*************************************************************************************/
 	function create(nameTag, idTag, classTag, contentTag){
 		var tag = document.createElement(nameTag);
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	
 	/*************************************************************************************/
-
+	create("div", "preload", "on", "");
 	create("pre", "myTime", "", "");
 	//create("", "", "", "");
 	//create("", "", "", "");
