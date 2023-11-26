@@ -5,6 +5,8 @@
 */
 
 * {
+	margin : 0px;
+	padding : 0px;
 	border-radius : 5px;
 	font-family : monospace;
 	font-size : 24px;
@@ -20,7 +22,6 @@ body {
 /*****************************************************************/
 
 #preload.on {
-	margin : 0px;
 	background-color : gray;
 	position : fixed;
 	width : 100%;
