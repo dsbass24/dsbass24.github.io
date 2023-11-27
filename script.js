@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 			platform.appendChild(tag);
 			tag.innerText = idTag;
 			tag.href = contentTag;
+			tag.id = "";
 		}
 		
 	}
