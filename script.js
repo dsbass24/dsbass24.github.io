@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	/*************************************************************************************/
 	create("div", "preload", "on", "");
 	create("pre", "myTime", "", "");
-	create("div", "platform", "", "");
+	create("nav", "platform", "", "");
 	//create("", "", "", "");
 	//create("", "", "", "");
 	/*************************************************************************************/

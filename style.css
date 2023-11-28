@@ -50,6 +50,9 @@ body {
 
 /*****************************************************************/
 #platform {
+	position : absolute;
+	top : 4px;
+	left : 4px;
 	width : 60%;
 	background-color : #00000099;
 	padding: 4px;
