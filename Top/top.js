@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 	
 	var myBody = document.body;
 	
-	//myBody.innerText = document.lastModified;
 	//===================================================================================================
 	function newTag(nameTag, idTag, classTag, contentTag){
 		var tag = document.createElement(nameTag);
@@ -22,11 +21,13 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 		}
 	}
-	
 	//===================================================================================================
-
+	function tt(t, con){
+		t.innerText = con;
+	}
+	//===================================================================================================
 	newTag("div", "pre", "",);
-	pre.innerText = "# color";
+	tt(pre, "# color");
 	newTag("button", "upBut", "");
 	newTag("button", "downBut", "");
 	newTag("input", "col", "");
@@ -36,8 +37,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	//===================================================================================================
 	
 	function colorTag(){
-		//concole.log();
-		pre.innerText = col.value;
+		tt(pre, col.value);
 		pre.style.color = col.value;
 	}
 	
