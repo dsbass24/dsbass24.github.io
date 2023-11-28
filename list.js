@@ -20,7 +20,7 @@ var myLinks = [
 		pagesLincs : "https://dsbass24.github.io/MyHTML/"
 	},
 	{
-		name : "Top",
+		name : "Top page...",
 		pagesLincs : "Top/index.html"
 	},
 	{
