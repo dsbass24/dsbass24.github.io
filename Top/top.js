@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	
 	//===================================================================================================
 
-	newTag("div", "pre", "");
+	newTag("div", "pre", "",);
+	pre.innerText = "# color";
 	newTag("button", "upBut", "");
 	newTag("button", "downBut", "");
 	newTag("input", "col", "");
