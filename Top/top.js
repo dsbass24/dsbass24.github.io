@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		}
 	}
 	//===================================================================================================
+	//Для вывода текста.
 	function tt(t, con){
 		t.innerText = con;
 	}
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	//newTag("", "", "");
 	
 	//===================================================================================================
-	
+	//Для вывода цветового значения.
 	function colorTag(){
 		tt(pre, col.value);
 		pre.style.color = col.value;
