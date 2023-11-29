@@ -4,6 +4,7 @@
 	JavaScript
 */
 
+
 document.addEventListener("DOMContentLoaded", function(e){
 	
 	var myBody = document.body;
@@ -14,12 +15,25 @@ document.addEventListener("DOMContentLoaded", function(e){
 		myBody.appendChild(tag);
 		tag.id = idTag;
 		
-		if(nameTag === "input"){
+		//===============================================================================================
+		if(classTag === "section"){
+			tag.className = classTag;
+			navBox.appendChild(tag);
+		}
+		if(idTag === "pre"){
+			s1.appendChild(tag);
+		}
+		if(idTag === "col"){
+			s1.appendChild(tag);
 			tag.type = "color";
+			tt(pre, "# color");
+			//Для вывода цветового значения.
 			tag.oninput = function(){
-				colorTag();
+				tt(pre, tag.value);
+				pre.style.color = tag.value;
 			}
 		}
+		//===============================================================================================
 	}
 	//===================================================================================================
 	//Для вывода текста.
@@ -27,20 +41,18 @@ document.addEventListener("DOMContentLoaded", function(e){
 		t.innerText = con;
 	}
 	//===================================================================================================
-	newTag("div", "pre", "",);
-	tt(pre, "# color");
-	newTag("button", "upBut", "");
-	newTag("button", "downBut", "");
-	newTag("input", "col", "");
+	newTag("nav", "navBox");
+	newTag("section", "s1", "section");
+	newTag("pre", "pre");
+	newTag("input", "col");
+	newTag("button", "upBut");
+	newTag("button", "downBut");
+
 	//newTag("", "", "");
 	//newTag("", "", "");
 	
 	//===================================================================================================
-	//Для вывода цветового значения.
-	function colorTag(){
-		tt(pre, col.value);
-		pre.style.color = col.value;
-	}
+	
 	
 	//===================================================================================================
 	//===================================================================================================

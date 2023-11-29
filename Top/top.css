@@ -10,6 +10,7 @@
 	padding : 0;
 	font-family : Monospace;
 	color : #ffa200;
+	border-radius : 5px;
 }
 body {
 	background-color : gray;
@@ -20,6 +21,15 @@ body {
 	font-size : 20px;
 }
 /**************************************************************************/
+#navBox {
+	/* background-color : #aaaaaa99; */
+	position : absolute;
+	margin : 10px;
+}
+.section {
+	border : 1px solid #999999;
+	padding : 2px;
+}
 /**************************************************************************/
 button {
 	background-color : #00000000;
