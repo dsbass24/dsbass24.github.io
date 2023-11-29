@@ -54,7 +54,8 @@ body {
 	top : 4px;
 	left : 4px;
 	width : 60%;
-	background-color : #00000099;
+	background : linear-gradient(to bottom, #12003fa3, #000000cc);
+	/* background-color : #00000099; */
 	padding: 4px;
 }
 a {
