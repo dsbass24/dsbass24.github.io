@@ -140,6 +140,7 @@ section {
 	background-size : cover;
 	border : 1px solid black;
 	font-size : 0px;
+	text-align : center;
 }
 section.off {
 	background-color : rgba(0, 100, 255, 0.4);
