@@ -82,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 	newTag("section", "s2", "section");
 	newTag("pre", "pre2");
 	newTag("input", "checkMouse");
-	
 	newTag("div", "myText");
 	newTag("button", "upBut");
 	newTag("button", "downBut");
