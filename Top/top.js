@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 		if(idTag === "checkMouse"){
 			s2.appendChild(tag);
 			tag.type = "checkbox";
+			//Включаем или выключаем информационный курсор.
 			tag.addEventListener("change", function(){
 				if(tag.checked){
 					tag.value = "on";
