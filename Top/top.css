@@ -108,6 +108,7 @@ button:hover {
 	padding : 4px;
 	border : 1px solid #000000;
 	width : 100%;
+	cursor : pointer;
 }
 /**************************************************************************/
 
