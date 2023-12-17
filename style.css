@@ -40,8 +40,8 @@ body {
 
 #myTime {
 	position : fixed;
-	top : 5px;
-	right : 10px;
+	top : 2%;
+	right : 2%;
 	padding: 4px;
 	color : #ff9000;
 	font-size : 20px;
@@ -51,8 +51,8 @@ body {
 /*****************************************************************/
 #platform {
 	position : absolute;
-	top : 4px;
-	left : 4px;
+	top : 2%;
+	left : 2%;
 	width : 60%;
 	background : linear-gradient(to bottom, #12003fa3, #000000cc);
 	/* background-color : #00000099; */
