@@ -45,6 +45,28 @@ document.addEventListener("DOMContentLoaded", function(e){
 			}
 		}
 		//===============================================================================================
+		if(idTag === "pre2"){
+			s2.appendChild(tag);
+			tt(tag, "mouse off");
+		}
+		if(idTag === "checkMouse"){
+			s2.appendChild(tag);
+			tag.type = "checkbox";
+			tag.addEventListener("change", function(){
+				if(tag.checked){
+					tag.value = "on";
+					tt(pre2, "mouse on");
+					tt(myText, "on");
+					myBody.addEventListener("mouseover", who);
+				}
+				else{
+					tag.value = "off";
+					tt(pre2, "mouse off");
+					tt(myText, "off");
+					myBody.removeEventListener("mouseover", who);
+				}
+			});
+		}
 	}
 	//===================================================================================================
 	//Для вывода текста.
@@ -56,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 	newTag("section", "s1", "section");
 	newTag("pre", "pre");
 	newTag("input", "col");
+	newTag("section", "s2", "section");
+	newTag("pre", "pre2");
+	newTag("input", "checkMouse");
+	
 	newTag("div", "myText");
 	newTag("button", "upBut");
 	newTag("button", "downBut");
@@ -64,8 +90,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	//newTag("", "", "");
 
 	//===================================================================================================
-
-	myBody.addEventListener("mouseover", who);
+	
 	function who(getInf){
 		var inf = getInf.target;
 		//tt(myText, "outerWidth : " + window.outerWidth);
@@ -74,6 +99,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 	
 	//===================================================================================================
 	
+	upBut.onclick = function(){
+		tt(myText, "innerWidth : " + window.innerWidth);
+	}
+	downBut.onclick = function(){
+		tt(myText, "innerHeight : " + window.innerHeight);
+	}
 	
 	//===================================================================================================
 	//===================================================================================================
