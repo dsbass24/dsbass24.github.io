@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 		tag.id = idTag;
 		tag.className = classTag;
 		myBody.appendChild(tag);
-		
 		if(idTag === "preload"){
 			//console.log(preload.className);
 		}
