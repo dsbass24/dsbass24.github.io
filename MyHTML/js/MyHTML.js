@@ -3,14 +3,10 @@
 	
 	JavaScript
 */
-
 // Списки: name, iconLink
 // smailList, pngList, pngList2, pngList3.
-
 document.addEventListener("DOMContentLoaded", function(e){
-	//console.log(e);
 	var myBody = document.body;
-	
 	create("div", "preload", "on", "");
 	/*************************************************************************************/
 	function create(nameTag, idTag, classTag, contentTag){
@@ -32,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 			myDiv.appendChild(tag);
 		}
 	}
-	
 	/*************************************************************************************/
 	create("div", "myDiv", "", "");
 	create("pre", "myTime", "", "");
@@ -98,14 +93,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	setInterval(time, 1000);
 	//myDiv.innerHTML = JSON.stringify(newList);
-	
 	/*************************************************************************************/
 	// Заглушка прелоадера.
 	window.onload = function(){
-
 		if(document.readyState == "complete"){
 			preload.className = "off";
-			//console.log(preload.className);
 		}
 	}
 	/*************************************************************************************/

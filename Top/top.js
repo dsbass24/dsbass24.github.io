@@ -3,10 +3,7 @@
 	
 	JavaScript
 */
-
-
 document.addEventListener("DOMContentLoaded", function(e){
-
 	var myBody = document.body;
 	//Заглушка прелоадера.
 	newTag("div", "preload", "on", "Top page loading...");
@@ -85,27 +82,21 @@ document.addEventListener("DOMContentLoaded", function(e){
 	newTag("div", "myText");
 	newTag("button", "upBut");
 	newTag("button", "downBut");
-
 	//newTag("", "", "");
 	//newTag("", "", "");
-
 	//===================================================================================================
-	
 	function who(getInf){
 		var inf = getInf.target;
 		//tt(myText, "outerWidth : " + window.outerWidth);
 		tt(myText, inf.outerHTML);
 	}
-	
 	//===================================================================================================
-	
 	upBut.onclick = function(){
 		tt(myText, "innerWidth : " + window.innerWidth);
 	}
 	downBut.onclick = function(){
 		tt(myText, "innerHeight : " + window.innerHeight);
 	}
-	
 	//===================================================================================================
 	//===================================================================================================
 	//===================================================================================================
