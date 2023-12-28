@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 		var tag = document.createElement(nameTag);
 		myBody.appendChild(tag);
 		tag.id = idTag;
-
 		if(idTag === "preload"){
 			tag.className = classTag;
 			tt(tag, contentTag);
