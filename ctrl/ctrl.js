@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	console.log(document.lastModified);
 });
-var myLett = 24;
+var myLett = 35;
 console.log("myLett =");
 /*
 var mass = [];
