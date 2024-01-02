@@ -211,8 +211,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	function wordLen(ob){
 		one.onclick = function(){};
 		kart.className = "hidd";
-		newSw = [sw[ob].word.length];
-		for(var i = 0; i < sw[ob].word.length; i++){
+		/* newSw = [sw[ob].word.length]; */
+		/* for(var i = 0; i < sw[ob].word.length; i++){
 			newSw[i] = {"eng":sw[ob].word[i],"rus":swTrans[ob].word[i]};
 			//newSw[i] = {"eng":sw[ob].word[i],"rus":sw[ob].word[i].length};
 			box.push(newSw[i]);
@@ -226,6 +226,32 @@ document.addEventListener("DOMContentLoaded", function(e){
 					takeSWWord();
 				}
 			}, i * 15);
+		} */
+		myWords();
+		function myWords(){
+			newSw = [sw[ob].word.length];
+			for(var i = 0; i < sw[ob].word.length; i++){
+				// Возможность ограничить список по количеству букв.
+				// Через консольное меню "myLett" - меняем значение.
+				if(sw[ob].word[i].length <= myLett){
+					newSw[i] = {"eng":sw[ob].word[i],"rus":swTrans[ob].word[i]};
+					//newSw[i] = {"eng":sw[ob].word[i],"rus":sw[ob].word[i].length};
+					box.push(newSw[i]);
+					setTimeout(function(){
+						create("section", "", "off", box[len.childElementCount].eng);
+						maximum();
+						offColor(len.childElementCount);
+						tt(time, "Количество символов : " + len.textContent.length);
+						if(box.length === len.childElementCount){
+							tt(right, len.childElementCount + " пунктов добавлено...\nНажми ещё раз, чтобы сохранить список и начать тренировку");
+							takeSWWord();
+						}
+					}, i * 15);
+				}else{
+					//console.log("0");
+					takeSWWord();
+				}
+			}
 		}
 		function offColor(n){
 			var elOff = len.childNodes[n - 1];
@@ -532,3 +558,17 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	console.log(document.lastModified);
 });
+var myLett = 24;
+console.log("myLett =");
+/*
+var mass = [];
+var myMass = [];
+function getW(w){
+    if(box[w].eng.length <= 6){
+        mass = {"eng":box[w].eng,"rus":box[w].rus};
+        myMass.push(box[w]);} 
+    }
+for(var d = 0; d < box.length; d++){
+    getW(d);
+}
+*/
