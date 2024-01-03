@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 					}, i * 15);
 				}else{
 					//console.log("0");
-					//takeSWWord();
+					takeSWWord();
 				}
 			}
 		}
