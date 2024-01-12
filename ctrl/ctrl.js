@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 				});
 			}
 		}
-		if(tag === "input"){
+		if(id === "inp"){
 			left.appendChild(myTag);
 			myTag.autocomplete = "off";
 			myTag.autofocus = "true";
@@ -88,6 +88,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 		if(tag === "span"){
 			right.appendChild(myTag);
 			myTag.innerText = con;
+		}
+		if(id === "num"){
+			tag.type = "number";
 		}
 	}
 	/* Общий набор тегов ***********************************************************************************************************/
@@ -199,6 +202,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 		rBody("Sliz");
 		create("div", "len", "");
 		create("div", "one", "onedone");
+		
+		create("input", "num", "");
+		
 		for(var i = 0; i < sw.length; i++){
 			create("section", i, "sw", sw[i].lett + " : " + sw[i].word.length);
 		}
@@ -227,12 +233,20 @@ document.addEventListener("DOMContentLoaded", function(e){
 				}
 			}, i * 15);
 		} */
+		/* num.oninput = function(){
+			myLett = num.value;
+		} */
 		myWords();
 		function myWords(){
+			if(num.value === ""){
+				myLett = 35;
+			}else{
+				myLett = num.value;
+			}
 			newSw = [sw[ob].word.length];
 			for(var i = 0; i < sw[ob].word.length; i++){
 				// Возможность ограничить список по количеству букв.
-				// Через консольное меню "myLett" - меняем значение.
+				// В маленьком инпуте внизу экрана - вводим числовое значение.
 				if(sw[ob].word[i].length <= myLett){
 					newSw[i] = {"eng":sw[ob].word[i],"rus":swTrans[ob].word[i]};
 					//newSw[i] = {"eng":sw[ob].word[i],"rus":sw[ob].word[i].length};
@@ -558,8 +572,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 	}
 	console.log(document.lastModified);
 });
-var myLett = 35;
-console.log("myLett =");
+var myLett;
+//console.log("myLett =");
 /*
 var mass = [];
 var myMass = [];

@@ -423,3 +423,12 @@ button {
 	box-shadow : none;
 	border-style : inset;
 }
+/*********************************************************************************************************/
+#num {
+	bottom : 5%;
+	left : 4%;
+	width : 30px;
+	position : fixed;
+	background-color : #51515159;
+	color : #3dff00;
+}
